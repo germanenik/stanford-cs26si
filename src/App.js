@@ -1,11 +1,15 @@
-import logo from './logo.svg';
+import logo from './svgs/first.svg';
 import './App.css';
+import SplashScreen from './screens/SplashScreen';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div style={{display:"flex", flexDirection:"row"}}>
+          <img src={logo} className="App-logo" alt="logo" style={{opacity:0.5}} />
+          <img src={logo} className="App-logo" alt="logo" style={{opacity:0.5}} />
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,6 +22,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <SplashScreen />
     </div>
   );
 }
