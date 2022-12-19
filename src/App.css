@@ -3,8 +3,10 @@
 }
 
 .App-logo {
-  height: 30vmin;
+  /* height: 30vmin; */
   pointer-events: none;
+  margin: 100;
+  padding: 10;
 }
 
 @media (prefers-reduced-motion: no-preference) {
