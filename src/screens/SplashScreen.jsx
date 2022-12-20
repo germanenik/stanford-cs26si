@@ -1,5 +1,12 @@
 import React from "react";
-import "./Splash.css"
+
+import glyph_2_n7 from '../glyphs/glyph_2_n7.svg';
+import glyph_2_n6 from '../glyphs/glyph_2_n6.svg';
+import glyph_2_n5 from '../glyphs/glyph_2_n5.svg';
+import glyph_2_n4 from '../glyphs/glyph_2_n4.svg';
+import glyph_2_n3 from '../glyphs/glyph_2_n3.svg';
+import glyph_2_n2 from '../glyphs/glyph_2_n2.svg';
+import glyph_2_n1 from '../glyphs/glyph_2_n1.svg';
 import glyph_2_0 from '../glyphs/glyph_2_0.png';
 import glyph_2_p1 from '../glyphs/glyph_2_p1.svg';
 import glyph_2_p2 from '../glyphs/glyph_2_p2.svg';
@@ -10,12 +17,25 @@ import glyph_2_p6 from '../glyphs/glyph_2_p6.svg';
 import glyph_2_p7 from '../glyphs/glyph_2_p7.svg';
 import glyph_2_p8 from '../glyphs/glyph_2_p8.svg';
 
+// consts
+const capHeight = 13; // greek, cyrillic, latin, etc
+const hanziDy = 2;
 
-const GlyphDiv = ({src, shiftDown=false}) => {
-    console.log(src);
+// helpers
+const vh = (num) => `${num}vh`;
+const GlyphDiv = ({src, styles, imgStyles}) => {
     return (
-    <div className="glyph" style={{padding:5, paddingBottom:shiftDown ? -10 : 5}}>
-        <img src={src} alt="glyph" style={{opacity:0.5}} />
+    <div style={{
+        display:"flex", 
+        flexDirection:"row",
+        alignItems:"flex-end",
+        marginTop:vh(0),
+        marginLeft:6, 
+        marginRight:6, 
+        opacity:0.5, 
+        ...styles
+    }}>
+        <img src={src} alt="glyph" style={{height:"14vh", ...imgStyles}}/>
     </div>
     )
 };
@@ -23,15 +43,22 @@ const GlyphDiv = ({src, shiftDown=false}) => {
 const SplashScreen = () => {
     return (
         <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"flex-end"}}>
-            <GlyphDiv src={glyph_2_0} />
-            <GlyphDiv src={glyph_2_p1} />
-            <GlyphDiv src={glyph_2_p2} />
-            <GlyphDiv src={glyph_2_p3} shiftDown={true}/>
-            <GlyphDiv src={glyph_2_p4} />
-            <GlyphDiv src={glyph_2_p5} />
-            <GlyphDiv src={glyph_2_p6} />
-            <GlyphDiv src={glyph_2_p7} />
-            <GlyphDiv src={glyph_2_p8} />
+            <GlyphDiv src={glyph_2_n7} imgStyles={{height:vh(capHeight+hanziDy)}}/>
+            <GlyphDiv src={glyph_2_n6} imgStyles={{height:vh(capHeight)}}/>
+            <GlyphDiv src={glyph_2_n5} imgStyles={{height:vh(capHeight), marginRight:8, marginLeft:8}}/>
+            <GlyphDiv src={glyph_2_n4} imgStyles={{height:vh(capHeight+5), marginBottom:vh(-5)}}/>
+            <GlyphDiv src={glyph_2_n3} imgStyles={{height:vh(capHeight+hanziDy)}}/>
+            <GlyphDiv src={glyph_2_n2} imgStyles={{height:vh(capHeight)}}/>
+            <GlyphDiv src={glyph_2_n1} imgStyles={{height:vh(capHeight+hanziDy), marginRight:-5}}/>
+            <GlyphDiv src={glyph_2_0}  imgStyles={{height:vh(capHeight+2.5)}}/> 
+            <GlyphDiv src={glyph_2_p1} imgStyles={{height:vh(capHeight+3.5), marginLeft:-10}}/>
+            <GlyphDiv src={glyph_2_p3} imgStyles={{height:vh(capHeight+4), marginBottom:vh(-4), marginLeft:-15}} />
+            <GlyphDiv src={glyph_2_p2} imgStyles={{height:vh(capHeight)}}/>
+            <GlyphDiv src={glyph_2_p4} imgStyles={{height:vh(capHeight)}}/>
+            <GlyphDiv src={glyph_2_p5} imgStyles={{height:vh(capHeight-1)}}/>
+            <GlyphDiv src={glyph_2_p6} imgStyles={{height:vh(capHeight-1)}}/>
+            <GlyphDiv src={glyph_2_p7} imgStyles={{height:vh(capHeight)}}/>
+            <GlyphDiv src={glyph_2_p8} imgStyles={{height:vh(capHeight-1)}}/>
         </div>
     );
 }
