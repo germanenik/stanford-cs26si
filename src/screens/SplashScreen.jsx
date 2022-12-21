@@ -35,30 +35,34 @@ const GlyphDiv = ({src, styles, imgStyles}) => {
         opacity:0.5, 
         ...styles
     }}>
-        <img src={src} alt="glyph" style={{height:"14vh", ...imgStyles}}/>
+        <img src={src} alt="glyph" style={{...imgStyles}}/>
     </div>
     )
 };
 
 const SplashScreen = () => {
     return (
-        <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"flex-end"}}>
-            <GlyphDiv src={glyph_2_n7} imgStyles={{height:vh(capHeight+hanziDy)}}/>
-            <GlyphDiv src={glyph_2_n6} imgStyles={{height:vh(capHeight)}}/>
-            <GlyphDiv src={glyph_2_n5} imgStyles={{height:vh(capHeight), marginRight:8, marginLeft:8}}/>
-            <GlyphDiv src={glyph_2_n4} imgStyles={{height:vh(capHeight+5), marginBottom:vh(-5)}}/>
-            <GlyphDiv src={glyph_2_n3} imgStyles={{height:vh(capHeight+hanziDy)}}/>
-            <GlyphDiv src={glyph_2_n2} imgStyles={{height:vh(capHeight)}}/>
-            <GlyphDiv src={glyph_2_n1} imgStyles={{height:vh(capHeight+hanziDy), marginRight:-5}}/>
+        <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%"}}>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
+                <GlyphDiv src={glyph_2_n7} imgStyles={{height:vh(capHeight+hanziDy)}}/>
+                <GlyphDiv src={glyph_2_n6} imgStyles={{height:vh(capHeight)}}/>
+                <GlyphDiv src={glyph_2_n5} imgStyles={{height:vh(capHeight), marginRight:8, marginLeft:8}}/>
+                <GlyphDiv src={glyph_2_n4} imgStyles={{height:vh(capHeight+5), marginBottom:vh(-5)}}/>
+                <GlyphDiv src={glyph_2_n3} imgStyles={{height:vh(capHeight+hanziDy)}}/>
+                <GlyphDiv src={glyph_2_n2} imgStyles={{height:vh(capHeight)}}/>
+                <GlyphDiv src={glyph_2_n1} imgStyles={{height:vh(capHeight+hanziDy), marginRight:-5}}/>
+            </div>
             <GlyphDiv src={glyph_2_0}  imgStyles={{height:vh(capHeight+2.5)}}/> 
-            <GlyphDiv src={glyph_2_p1} imgStyles={{height:vh(capHeight+4.5), marginLeft:-10}}/>
-            <GlyphDiv src={glyph_2_p2} imgStyles={{height:vh(capHeight+4), marginBottom:vh(-4), marginLeft:-15}} />
-            <GlyphDiv src={glyph_2_p3} imgStyles={{height:vh(capHeight)}}/>
-            <GlyphDiv src={glyph_2_p4} imgStyles={{height:vh(capHeight)}}/>
-            <GlyphDiv src={glyph_2_p5} imgStyles={{height:vh(capHeight-1)}}/>
-            <GlyphDiv src={glyph_2_p6} imgStyles={{height:vh(capHeight-1)}}/>
-            <GlyphDiv src={glyph_2_p7} imgStyles={{height:vh(capHeight)}}/>
-            <GlyphDiv src={glyph_2_p8} imgStyles={{height:vh(capHeight-1)}}/>
+            <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
+                <GlyphDiv src={glyph_2_p1} imgStyles={{height:vh(capHeight+4.5), marginLeft:-10}}/>
+                <GlyphDiv src={glyph_2_p2} imgStyles={{height:vh(capHeight+4), marginBottom:vh(-4), marginLeft:-15}} />
+                <GlyphDiv src={glyph_2_p3} imgStyles={{height:vh(capHeight)}}/>
+                <GlyphDiv src={glyph_2_p4} imgStyles={{height:vh(capHeight)}}/>
+                <GlyphDiv src={glyph_2_p5} imgStyles={{height:vh(capHeight-1)}}/>
+                <GlyphDiv src={glyph_2_p6} imgStyles={{height:vh(capHeight-1)}}/>
+                <GlyphDiv src={glyph_2_p7} imgStyles={{height:vh(capHeight)}}/>
+                <GlyphDiv src={glyph_2_p8} imgStyles={{height:vh(capHeight-1)}}/>
+            </div>
         </div>
     );
 }
