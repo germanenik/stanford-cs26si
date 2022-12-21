@@ -72,7 +72,7 @@ const row2 = () => {
                 <GlyphDiv src={glyph_2_n6} imgStyles={{height:vh(capHeight)}}/>
                 <GlyphDiv src={glyph_2_n5} imgStyles={{height:vh(capHeight), marginRight:8, marginLeft:8}}/>
                 <GlyphDiv src={glyph_2_n4} imgStyles={{height:vh(capHeight+5), marginBottom:vh(-5)}}/>
-                <GlyphDiv src={glyph_2_n3} imgStyles={{height:vh(capHeight+hanziDy)}}/>
+                <GlyphDiv src={glyph_2_n3} imgStyles={{height:vh(capHeight+2)}}/>
                 <GlyphDiv src={glyph_2_n2} imgStyles={{height:vh(capHeight)}}/>
                 <GlyphDiv src={glyph_2_n1} imgStyles={{height:vh(capHeight+hanziDy), marginRight:-5}}/>
             </div>
