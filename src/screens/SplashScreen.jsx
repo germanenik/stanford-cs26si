@@ -43,7 +43,7 @@ import glyph_2_p8 from '../glyphs/glyph_2_p8.svg';
 const capHeight = 13; // greek, cyrillic, latin, etc
 const hanziDy = 2;
 const indicDy = -1;
-const nonIndicAbugDy = -4;
+const nonIndicAbugDy = -1;
 
 // helpers
 const vh = (num) => `${num}vh`;
@@ -85,7 +85,7 @@ const row2 = () => {
                 <GlyphDiv src={glyph_2_p5} imgStyles={{height:vh(capHeight-1)}}/>
                 <GlyphDiv src={glyph_2_p6} imgStyles={{height:vh(capHeight-1)}}/>
                 <GlyphDiv src={glyph_2_p7} imgStyles={{height:vh(capHeight)}}/>
-                <GlyphDiv src={glyph_2_p8} imgStyles={{height:vh(capHeight-1)}}/>
+                <GlyphDiv src={glyph_2_p8} imgStyles={{height:vh(capHeight+nonIndicAbugDy)}}/>
             </div>
         </div>
     );
@@ -100,7 +100,7 @@ const row1 = () => {
                 {/* <GlyphDiv src={glyph_1_n6} imgStyles={{height:vh(capHeight-1)}}/> */}
                 <GlyphDiv src={glyph_1_n5} imgStyles={{height:vh(capHeight), marginRight:-7}}/>
                 <GlyphDiv src={glyph_1_n4} imgStyles={{height:vh(capHeight+indicDy)}}/>
-                <GlyphDiv src={glyph_1_n3} imgStyles={{height:vh(capHeight+nonIndicAbugDy)}}/>
+                <GlyphDiv src={glyph_1_n3} imgStyles={{height:vh(capHeight-4)}}/>
                 <GlyphDiv src={glyph_1_n2} imgStyles={{height:vh(capHeight)}}/>
                 <GlyphDiv src={glyph_1_n1} imgStyles={{height:vh(capHeight)}}/>
             </div>
