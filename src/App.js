@@ -6,12 +6,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <SplashScreen />
-        <SplashScreen />
-        <SplashScreen />
-        <SplashScreen />
-        <SplashScreen />
-        <SplashScreen />
-        <SplashScreen />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
