@@ -33,11 +33,13 @@ import glyph_2_p6 from '../glyphs/glyph_2_p6.svg';
 import glyph_2_p7 from '../glyphs/glyph_2_p7.svg';
 import glyph_2_p8 from '../glyphs/glyph_2_p8.svg';
 
-// european aplphabts - helvetica
+// european aplphabets, georgian - helvetica
 // chinese - helvetica
-// jp - noto jp
+// jp - noto sans jp
 // thai - helvetica
-// indic - noto
+// indic - noto sans
+// geez, khmer - noto serif 
+// armenian - noto sans 
 
 // consts
 const capHeight = 13; // greek, cyrillic, latin, etc
