@@ -1,6 +1,6 @@
 import React from "react";
 
-import glyph_1_n7 from '../glyphs/glyph_1_n7.svg';
+//import glyph_1_n7 from '../glyphs/glyph_1_n7.svg';
 import glyph_1_n6 from '../glyphs/glyph_1_n6.svg';
 import glyph_1_n5 from '../glyphs/glyph_1_n5.svg';
 import glyph_1_n4 from '../glyphs/glyph_1_n4.svg';
@@ -33,13 +33,13 @@ import glyph_2_p6 from '../glyphs/glyph_2_p6.svg';
 import glyph_2_p7 from '../glyphs/glyph_2_p7.svg';
 import glyph_2_p8 from '../glyphs/glyph_2_p8.svg';
 
-// european aplphabets, georgian - helvetica
-// chinese - helvetica
-// jp - noto sans jp
-// thai - helvetica
-// indic - noto sans
-// geez, khmer - noto serif 
-// armenian - noto sans 
+import { glyphInfo } from "../data";
+
+const cache = {};
+function importAll(r) {
+  r.keys().forEach((key) => (cache[key] = r(key)));
+}
+importAll(require.context('../glyphs/', true, /\.svg$/));
 
 // consts
 const capHeight = 13; // greek, cyrillic, latin, etc
@@ -49,9 +49,9 @@ const nonIndicAbugDy = -1;
 
 // helpers
 const vh = (num) => `${num}vh`;
-const GlyphDiv = ({src, styles, imgStyles}) => {
+const GlyphDiv = ({id, src, styles, imgStyles}) => {
     return (
-    <div style={{
+    <div id={id} style={{
         display:"flex", 
         flexDirection:"row",
         alignItems:"flex-end",
@@ -65,6 +65,12 @@ const GlyphDiv = ({src, styles, imgStyles}) => {
     </div>
     )
 };
+
+const splashDatum = {
+    id: "glyph_1_n7",
+    src: require('../glyphs/glyph_1_n7.svg').default,
+    imgStyles: {height:vh(capHeight+indicDy), marginRight:0}
+}
 
 const row2 = () => {
     return (
@@ -97,9 +103,9 @@ const row1 = () => {
     return (
         <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%"}}>
             <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
-                <GlyphDiv src={glyph_1_n7} imgStyles={{height:vh(capHeight+indicDy), marginRight:0}}/>
+                <GlyphDiv {...splashDatum} />
+                {/* <GlyphDiv src={require('../glyphs/glyph_1_n7.svg').default} imgStyles={{height:vh(capHeight+indicDy), marginRight:0}}/> */}
                 <GlyphDiv src={glyph_1_n6} imgStyles={{height:vh(capHeight+nonIndicAbugDy)}}/>
-                {/* <GlyphDiv src={glyph_1_n6} imgStyles={{height:vh(capHeight-1)}}/> */}
                 <GlyphDiv src={glyph_1_n5} imgStyles={{height:vh(capHeight), marginRight:-7}}/>
                 <GlyphDiv src={glyph_1_n4} imgStyles={{height:vh(capHeight+indicDy)}}/>
                 <GlyphDiv src={glyph_1_n3} imgStyles={{height:vh(capHeight-4)}}/>
@@ -111,7 +117,6 @@ const row1 = () => {
                 <GlyphDiv src={glyph_1_p1} imgStyles={{height:vh(capHeight)}}/>
                 <GlyphDiv src={glyph_1_p2} imgStyles={{height:vh(capHeight+indicDy+5)}}/> {/*has a stroke on top*/ }
                 <GlyphDiv src={glyph_1_p3} imgStyles={{height:vh(capHeight+hanziDy), marginBottom:vh(-1)}}/>
-                {/* <GlyphDiv src={glyph_1_p4} imgStyles={{height:vh(capHeight+nonIndicAbugDy)}}/> */}
                 <GlyphDiv src={glyph_1_p4} imgStyles={{height:vh(capHeight-1)}}/>
                 <GlyphDiv src={glyph_1_p5} imgStyles={{height:vh(capHeight)}}/>
                 <GlyphDiv src={glyph_1_p6} imgStyles={{height:vh(capHeight)}}/>
@@ -143,3 +148,12 @@ const screen = () => {
 export default screen;
 
 // for bulk: https://stackoverflow.com/questions/45754739/how-to-import-an-entire-folder-of-svg-images-or-how-to-load-them-dynamically-i
+
+// fonts
+// european aplphabets, georgian - helvetica
+// chinese - helvetica
+// jp - noto sans jp
+// thai - helvetica
+// indic - noto sans
+// geez, khmer - noto serif 
+// armenian - noto sans 
