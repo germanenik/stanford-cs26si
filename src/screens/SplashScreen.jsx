@@ -10,7 +10,7 @@ function importAll(r) {
 console.log(cache);
 importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
 // for looping
-const row_nums = Array.from([0,1,2,3,4]);
+const row_nums = Array.from([0, 1, 2, 3, 4, 5]);
 const left_cols = Array.from(['n8', 'n7', 'n6', 'n5', 'n4', 'n3', 'n2', 'n1']);
 const right_cols = Array.from(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8']);
 
@@ -271,10 +271,10 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+2.7), marginBottom:vh(0), marginLeft:vw(-1)}
     },
     glyph_4_n7: {
-        imgStyles: {height:vh(capHeight+2), marginBottom:vh(-2)}
+        imgStyles: {height:vh(capHeight+2.5), marginBottom:vh(-2.5)}
     },
     glyph_4_n6: {
-        imgStyles: {height:vh(capHeight), marginRight:vw(0.5)}
+        imgStyles: {height:vh(capHeight), marginRight:vw(0.5), marginLeft:vw(0.4)}
     },
     glyph_4_n5: {
         imgStyles: {height:vh(capHeight)}
@@ -289,10 +289,10 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight)}
     },
     glyph_4_n1: {
-        imgStyles: {height:vh(capHeight), marginRight:vw(-1)}
+        imgStyles: {height:vh(capHeight), marginRight:vw(-0.5)}
     },
     glyph_4_0: {
-        imgStyles: {height:vh(capHeight), marginLeft:vw(1)}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(0.5)}
     },
     glyph_4_p1: {
         imgStyles: {height:vh(capHeight+3)}
@@ -304,7 +304,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight)}
     },
     glyph_4_p4: {
-        imgStyles: {height:vh(capHeight-2)}
+        imgStyles: {height:vh(capHeight-3), marginBottom:vh(1)}
     },
     glyph_4_p5: {
         imgStyles: {height:vh(capHeight)}
@@ -313,52 +313,52 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight), marginBottom:vh(-3)}
     },
     glyph_4_p7: {
-        imgStyles: {height:vh(capHeight), marginLeft:vw(-1)}
+        imgStyles: {height:vh(capHeight+2.5),  marginBottom:vh(-2.5), marginLeft:vw(-1)}
     },
     glyph_5_n7: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+1)}
     },
     glyph_5_n6: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+1), marginLeft:vw(-0.5), marginRight:vw(-0.3)}
     },
     glyph_5_n5: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+1)}
     },
     glyph_5_n4: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+4)}
     },
     glyph_5_n3: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(0.5)}
     },
     glyph_5_n2: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_n1: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+indicDy+3)}
     },
     glyph_5_0: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p1: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(-0.5)}
     },
     glyph_5_p2: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p3: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight-3)}
     },
     glyph_5_p4: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p5: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p6: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+2),marginLeft:vw(-0.3)}
     },
     glyph_5_p7: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_6_n7: {
         imgStyles: {}
