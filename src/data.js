@@ -1,6 +1,4 @@
-export const glyphInfo = [
+export const glyphDescription = [
     {
-        id: "glyph_2_n7", 
-        description: {writingSystem: "", script: "", language: ""}
     }
 ]
