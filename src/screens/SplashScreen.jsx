@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { glyphDescription } from "../data";
 import { getBaseFileName, getGlyphId } from "../util";
 
@@ -18,17 +18,23 @@ const right_cols = Array.from(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8']);
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
 const GlyphDiv = ({id, src, styles, imgStyles}) => {
+    const [opacity, setOpacity] = useState(0.5);
     return (
-    <div id={id} style={{
-        display:"flex", 
-        flexDirection:"row",
-        alignItems:"flex-end",
-        marginTop:vh(-1),
-        marginLeft:6, 
-        marginRight:6, 
-        opacity:0.5, 
-        ...styles
-    }}>
+    <div 
+        id={id} 
+        style={{
+            display:"flex", 
+            flexDirection:"row",
+            alignItems:"flex-end",
+            marginTop:vh(-1),
+            marginLeft:6, 
+            marginRight:6, 
+            opacity:opacity, 
+            ...styles
+        }}
+        onMouseOver={()=>setOpacity(1)}
+        onMouseOut={()=>setOpacity(0.5)}
+    >
         <img src={src} alt="glyph" style={{...imgStyles}}/>
     </div>
     )
