@@ -77,12 +77,12 @@ export default SplashScreen;
 // armenian - noto sans 
 
 //// styles
-const capHeight = 13; // greek, cyrillic, latin, etc
+const capHeight = 12.8; // greek, cyrillic, latin, etc
 const hanziDy = 2;
 const indicDy = -1;
 const nonIndicAbugDy = -2;
 const arabDy = -4;
-const rowHeight = 16.8;
+const rowHeight = 16.4;
 
 const rowHeights = [rowHeight, rowHeight-1, rowHeight, rowHeight, rowHeight, rowHeight, rowHeight];
 
@@ -121,10 +121,10 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight), marginLeft:vw(-1)}
     },
     glyph_0_p4: {
-        imgStyles: {height:vh(capHeight+arabDy)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_0_p5: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight+arabDy)}
     },
     glyph_0_p6: {
         imgStyles: {height:vh(capHeight+nonIndicAbugDy)}
@@ -169,7 +169,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight-1)}
     },
     glyph_1_p5: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight+2)}
     },
     glyph_1_p6: {
         imgStyles: {height:vh(capHeight)}
@@ -220,7 +220,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight-1)}
     },
     glyph_2_p7: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight), marginLeft:vh(0.3), marginRight:vh(0.3)}
     },
     glyph_2_p8: {
         imgStyles: {height:vh(capHeight+nonIndicAbugDy)}
