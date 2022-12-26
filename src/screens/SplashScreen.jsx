@@ -10,7 +10,7 @@ function importAll(r) {
 console.log(cache);
 importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
 // for looping
-const row_nums = Array.from([0, 1, 2, 3, 4, 5]);
+const row_nums = Array.from([0, 1, 2, 3, 4, 5, 6]);
 const left_cols = Array.from(['n8', 'n7', 'n6', 'n5', 'n4', 'n3', 'n2', 'n1']);
 const right_cols = Array.from(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8']);
 
@@ -361,101 +361,48 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight)}
     },
     glyph_6_n7: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+indicDy)}
     },
     glyph_6_n6: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+hanziDy), marginBottom:vh(-1)}
     },
     glyph_6_n5: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+nonIndicAbugDy)}
     },
     glyph_6_n4: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_6_n3: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight), marginRight:vw(-0.5)}
     },
     glyph_6_n2: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+1)}
     },
     glyph_6_n1: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+3)}
     },
     glyph_6_0: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_6_p1: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+1)}
     },
     glyph_6_p2: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight-3)}
     },
     glyph_6_p3: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_6_p4: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+2), marginLeft:vw(-1), marginRight:vw(-1)}
     },
     glyph_6_p5: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_6_p6: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight+6), marginBottom:vh(-4.5), marginLeft:vw(0.5)}
     },
     glyph_6_p7: {
-        imgStyles: {}
+        imgStyles: {height:vh(capHeight)}
     }
 }
-// const row2 = () => {
-//     return (
-//         <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%"}}>
-//             <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
-//                 <GlyphDiv src={glyph_2_n7} imgStyles={{height:vh(capHeight+hanziDy)}}/>
-//                 <GlyphDiv src={glyph_2_n6} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_2_n5} imgStyles={{height:vh(capHeight), marginRight:8, marginLeft:8}}/>
-//                 <GlyphDiv src={glyph_2_n4} imgStyles={{height:vh(capHeight+5), marginBottom:vh(-5)}}/>
-//                 <GlyphDiv src={glyph_2_n3} imgStyles={{height:vh(capHeight+2)}}/>
-//                 <GlyphDiv src={glyph_2_n2} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_2_n1} imgStyles={{height:vh(capHeight+hanziDy), marginRight:-5}}/>
-//             </div>
-//             <GlyphDiv src={glyph_2_0} imgStyles={{height:vh(capHeight+3.5), marginBottom:vh(-1)}}/> 
-//             <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
-//                 <GlyphDiv src={glyph_2_p1} imgStyles={{height:vh(capHeight+4.5), marginLeft:-10}}/>
-//                 <GlyphDiv src={glyph_2_p2} imgStyles={{height:vh(capHeight+4), marginBottom:vh(-4), marginLeft:-15}} />
-//                 <GlyphDiv src={glyph_2_p3} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_2_p4} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_2_p5} imgStyles={{height:vh(capHeight-1)}}/>
-//                 <GlyphDiv src={glyph_2_p6} imgStyles={{height:vh(capHeight-1)}}/>
-//                 <GlyphDiv src={glyph_2_p7} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_2_p8} imgStyles={{height:vh(capHeight+nonIndicAbugDy)}}/>
-//             </div>
-//         </div>
-//     );
-// }
-
-// const row1 = () => {
-//     return (
-//         <div style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%"}}>
-//             <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
-//                 <GlyphDiv {...splashDatum} />
-//                 {/* <GlyphDiv src={require('../glyphs/glyph_1_n7.svg').default} imgStyles={{height:vh(capHeight+indicDy), marginRight:0}}/> */}
-//                 <GlyphDiv src={glyph_1_n6} imgStyles={{height:vh(capHeight+nonIndicAbugDy)}}/>
-//                 <GlyphDiv src={glyph_1_n5} imgStyles={{height:vh(capHeight), marginRight:-7}}/>
-//                 <GlyphDiv src={glyph_1_n4} imgStyles={{height:vh(capHeight+indicDy)}}/>
-//                 <GlyphDiv src={glyph_1_n3} imgStyles={{height:vh(capHeight-4)}}/>
-//                 <GlyphDiv src={glyph_1_n2} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_1_n1} imgStyles={{height:vh(capHeight)}}/>
-//             </div>
-//             <GlyphDiv src={glyph_1_0}  imgStyles={{height:vh(capHeight)}}/> 
-//             <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
-//                 <GlyphDiv src={glyph_1_p1} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_1_p2} imgStyles={{height:vh(capHeight+indicDy+5)}}/> {/*has a stroke on top*/ }
-//                 <GlyphDiv src={glyph_1_p3} imgStyles={{height:vh(capHeight+hanziDy), marginBottom:vh(-1)}}/>
-//                 <GlyphDiv src={glyph_1_p4} imgStyles={{height:vh(capHeight-1)}}/>
-//                 <GlyphDiv src={glyph_1_p5} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_1_p6} imgStyles={{height:vh(capHeight)}}/>
-//                 <GlyphDiv src={glyph_1_p7} imgStyles={{height:vh(capHeight)}}/>
-//             </div>
-//         </div>
-//     );
-// };
