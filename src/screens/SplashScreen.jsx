@@ -10,7 +10,6 @@ const cache = {};
 function importAll(r) {
   r.keys().forEach((key) => (cache[getBaseFileName(key)] = r(key)));
 }
-console.log(cache);
 importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
 // for looping
 const row_nums = Array.from([0, 1, 2, 3, 4, 5, 6]);
@@ -21,11 +20,35 @@ const emojiIDs = Array.from(["glyph_6_p4", "glyph_5_n7", "glyph_3_p7", "glyph_2_
 // helpers
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
-const GlyphDiv = ({id, src, styles, imgStyles}) => {
-    const [opacity, setOpacity] = useState(0.5);
-    // const imgClass = emojiIDs.includes(id) ? null : "invert";
+
+const Window = ({glyphId}) => {
+    return (
+        <div style={{backgroundColor:"white", width:"25.5vw", height:"34vh", position:"fixed", bottom:"10vh", right:"8.8vw", borderRadius:20}}>
+            {glyphId && <GlyphDiv id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} setWindowGlyphId={()=>{}} isWindowGlyph={true}/>}
+        </div>
+    );
+}
+
+const GlyphDiv = ({id, src, styles, imgStyles, setWindowGlyphId, isWindowGlyph=false}) => {
+    const [opacity, setOpacity] = useState(!isWindowGlyph ? 0.5 : 1);
+    const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
+
+    const handleMouseOver = () => {
+        if (!isWindowGlyph) {
+            setWindowGlyphId(id);
+            setOpacity(1); 
+        } 
+    };
+
+    const handleMouseOut = () => {
+        if (!isWindowGlyph) {
+            setOpacity(0.5); 
+        } 
+    };
+
     return (
     <div 
+        className={className}
         id={id} 
         style={{
             display:"flex", 
@@ -37,8 +60,8 @@ const GlyphDiv = ({id, src, styles, imgStyles}) => {
             opacity:opacity, 
             ...styles
         }}
-        onMouseOver={()=>setOpacity(1)}
-        onMouseOut={()=>setOpacity(0.5)}
+        onMouseOver={()=>handleMouseOver()}
+        onMouseOut={()=>handleMouseOut()}
     >
         <img src={src} alt="glyph" style={{...imgStyles}}/>
     </div>
@@ -46,7 +69,9 @@ const GlyphDiv = ({id, src, styles, imgStyles}) => {
 };
 
 const SplashScreen = () => {
+    const [windowGlyphId, setWindowGlyphId] = useState(null);
     return (
+        <div>
         <div style={{backgroundColor:"#a2d2ff", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
             {row_nums.map((row) => (
                 <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", marginBottom:vh(marginsY[row])}}> 
@@ -55,23 +80,25 @@ const SplashScreen = () => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} />
+                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
-                    <GlyphDiv id={getGlyphId(row,0)} src={cache[getGlyphId(row,0)]} {...glyphStyles[getGlyphId(row,0)]} />
+                    <GlyphDiv id={getGlyphId(row,0)} src={cache[getGlyphId(row,0)]} {...glyphStyles[getGlyphId(row,0)]} setWindowGlyphId={setWindowGlyphId} />
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
                         {right_cols.map((col) => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} />
+                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
                 </div>
             ))
             }
+        </div>
+        <Window glyphId={windowGlyphId}/>
         </div>
     );
 };
@@ -308,19 +335,19 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight), marginLeft:vw(0.5)}
     },
     glyph_4_p1: {
-        imgStyles: {height:vh(capHeight+3)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_4_p2: {
-        imgStyles: {height:vh(capHeight), marginLeft:vw(0.3),  marginRight:vw(0.3)}
+        imgStyles: {height:vh(capHeight+3)}
     },
     glyph_4_p3: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(0.3),  marginRight:vw(0.3)}
     },
     glyph_4_p4: {
-        imgStyles: {height:vh(capHeight-3), marginBottom:vh(1)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_4_p5: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight-3), marginBottom:vh(1)}
     },
     glyph_4_p6: {
         imgStyles: {height:vh(capHeight), marginBottom:vh(-3)}
@@ -353,16 +380,16 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p1: {
-        imgStyles: {height:vh(capHeight), marginLeft:vw(-0.5)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p2: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(-0.5)}
     },
     glyph_5_p3: {
-        imgStyles: {height:vh(capHeight-3)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_5_p4: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight-3)}
     },
     glyph_5_p5: {
         imgStyles: {height:vh(capHeight)}
