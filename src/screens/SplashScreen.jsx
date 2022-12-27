@@ -47,9 +47,9 @@ const GlyphDiv = ({id, src, styles, imgStyles}) => {
 
 const SplashScreen = () => {
     return (
-        <div style={{backgroundColor:"#a2d2ff"}}>
+        <div style={{backgroundColor:"#a2d2ff", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
             {row_nums.map((row) => (
-                <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", height:vh(rowHeights[row])}}>
+                <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", marginBottom:vh(marginsY[row])}}> 
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
                         {left_cols.map((col) => {
                             const glyphId = getGlyphId(row, col);
@@ -94,8 +94,10 @@ const indicDy = -1;
 const nonIndicAbugDy = -2;
 const arabDy = -4;
 const rowHeight = 16.4;
+const marginY = 1.8;
 
 const rowHeights = [rowHeight, rowHeight-1, rowHeight, rowHeight, rowHeight, rowHeight, rowHeight];
+const marginsY = [-0.2, marginY-1.2, marginY, marginY+1, marginY, marginY, marginY]
 
 const glyphStyles = {
     glyph_0_n7: {
