@@ -88,7 +88,7 @@ export default SplashScreen;
 // armenian - noto sans 
 
 //// styles
-const capHeight = 12.8; // greek, cyrillic, latin, etc
+const capHeight = 12.7; // greek, cyrillic, latin, etc
 const hanziDy = 2;
 const indicDy = -1;
 const nonIndicAbugDy = -2;
@@ -245,13 +245,13 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+3), marginBottom:vh(-1.7)}
     },
     glyph_3_n5: {
-        imgStyles: {height:vh(capHeight+3), marginBottom:vh(-2.5)}
+        imgStyles: {height:vh(capHeight+3), marginBottom:vh(-2.5), marginRight:vw(0.2), marginLeft:vw(0.2)}
     },
     glyph_3_n4: {
         imgStyles: {height:vh(capHeight+nonIndicAbugDy+2.5), marginBottom:vh(-2.5)}
     },
     glyph_3_n3: {
-        imgStyles: {height:vh(capHeight), marginRight:vw(0.5), marginLeft:vw(0.5)}
+        imgStyles: {height:vh(capHeight), marginRight:vw(0.5)}
     },
     glyph_3_n2: {
         imgStyles: {height:vh(capHeight+1.5), marginBottom:vh(-1.5), marginRight:vw(0.3)}
