@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { glyphDescription } from "../data";
 import { getBaseFileName, getGlyphId } from "../util";
+import './SplashScreen.css'
+
+// TODOs: make all horozintal stuff relative, add min in terms of px
 
 // importing glyph svgs/pngs
 const cache = {};
@@ -13,12 +16,14 @@ importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
 const row_nums = Array.from([0, 1, 2, 3, 4, 5, 6]);
 const left_cols = Array.from(['n8', 'n7', 'n6', 'n5', 'n4', 'n3', 'n2', 'n1']);
 const right_cols = Array.from(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8']);
+const emojiIDs = Array.from(["glyph_6_p4", "glyph_5_n7", "glyph_3_p7", "glyph_2_0", "glyph_0_n3"]);
 
 // helpers
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
 const GlyphDiv = ({id, src, styles, imgStyles}) => {
     const [opacity, setOpacity] = useState(0.5);
+    // const imgClass = emojiIDs.includes(id) ? null : "invert";
     return (
     <div 
         id={id} 
@@ -28,7 +33,7 @@ const GlyphDiv = ({id, src, styles, imgStyles}) => {
             alignItems:"flex-end",
             marginTop:vh(-1),
             marginLeft:6, 
-            marginRight:6, 
+            marginRight:6,
             opacity:opacity, 
             ...styles
         }}
@@ -42,7 +47,7 @@ const GlyphDiv = ({id, src, styles, imgStyles}) => {
 
 const SplashScreen = () => {
     return (
-        <div>
+        <div style={{backgroundColor:"#a2d2ff"}}>
             {row_nums.map((row) => (
                 <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", height:vh(rowHeights[row])}}>
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>

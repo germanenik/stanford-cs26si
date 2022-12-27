@@ -3,10 +3,8 @@ import SplashScreen from './screens/SplashScreen';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
         <SplashScreen />
-      </header>
     </div>
   );
 }
