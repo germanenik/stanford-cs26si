@@ -80,7 +80,7 @@ const SplashScreen = () => {
     const [windowGlyphId, setWindowGlyphId] = useState(null);
     return (
         <div>
-        <div style={{backgroundColor:"#F0857D", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
+        <div style={{backgroundColor:"#6684C6", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
             {row_nums.map((row) => (
                 <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", marginBottom:vh(marginsY[row])}}> 
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
