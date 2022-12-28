@@ -24,28 +24,34 @@ const vw = (num) => `${num}vw`;
 const Window = ({glyphId}) => {
     return (
         <div style={{backgroundColor:"white", width:"25.5vw", height:"34vh", position:"fixed", bottom:"10vh", right:"8.8vw", borderRadius:20}}>
-            {glyphId && <GlyphDiv id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} setWindowGlyphId={()=>{}} isWindowGlyph={true}/>}
+            {glyphId && <GlyphDiv id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} isWindowGlyph={true}/>}
         </div>
     );
 }
 
-const GlyphDiv = React.memo(({id, src, styles, imgStyles, setWindowGlyphId, isWindowGlyph=false}) => {
-    console.log('drawing child', id);
-    const [opacity, setOpacity] = useState(!isWindowGlyph ? 0.4 : 0.75);
+const GlyphDiv = React.memo(({id, src, styles, imgStyles, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => {
+    console.log('drawing child', id, 'isSelected', isSelected, "isWindowGlyph", isWindowGlyph);
+    const regularOp = 0.4, hoveredOp=0.75, selectedOp=1;
+    const [opacity, setOpacity] = useState(!isWindowGlyph ? regularOp : 1);
     const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
 
     const handleMouseOver = () => {
-        if (!isWindowGlyph) {
-            setWindowGlyphId(id);
-            setOpacity(0.75); 
+        if (!isWindowGlyph) { // no !isSelected for more elegant deselecting
+            setOpacity(hoveredOp); 
         } 
     };
 
     const handleMouseOut = () => {
-        if (!isWindowGlyph) {
-            setOpacity(0.4); 
+        if (!isWindowGlyph) { // no !isSelected for more elegant deselecting
+            setOpacity(regularOp); 
         } 
     };
+
+    const handleOnClick = () => {
+        if (!isWindowGlyph) {
+            setWindowGlyphId(!isSelected ? id : null);
+        }
+    }
 
     return (
     <div 
@@ -58,11 +64,12 @@ const GlyphDiv = React.memo(({id, src, styles, imgStyles, setWindowGlyphId, isWi
             marginTop:vh(-1),
             marginLeft:6, 
             marginRight:6,
-            opacity:opacity, 
+            opacity:isSelected ? selectedOp : opacity, 
             ...styles
         }}
         onMouseOver={()=>handleMouseOver()}
         onMouseOut={()=>handleMouseOut()}
+        onClick={()=>handleOnClick()}
     >
         <img src={src} alt="glyph" style={{...imgStyles}}/>
     </div>
@@ -81,17 +88,17 @@ const SplashScreen = () => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} setWindowGlyphId={setWindowGlyphId}/>
+                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
-                    <GlyphDiv id={getGlyphId(row,0)} src={cache[getGlyphId(row,0)]} {...glyphStyles[getGlyphId(row,0)]} setWindowGlyphId={setWindowGlyphId} />
+                    <GlyphDiv id={getGlyphId(row,0)} src={cache[getGlyphId(row,0)]} {...glyphStyles[getGlyphId(row,0)]} isSelected={getGlyphId(row,0)===windowGlyphId} setWindowGlyphId={setWindowGlyphId} />
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
                         {right_cols.map((col) => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} setWindowGlyphId={setWindowGlyphId}/>
+                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
