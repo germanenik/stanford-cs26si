@@ -24,16 +24,17 @@ const vw = (num) => `${num}vw`;
 const Window = ({glyphId}) => {
     return (
         <div style={{backgroundColor:"white", width:"25.5vw", height:"34vh", position:"fixed", bottom:"10vh", right:"8.8vw", borderRadius:20}}>
-            {glyphId && <GlyphDiv id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} isWindowGlyph={true}/>}
+            {glyphId && <GlyphDiv id={glyphId} isWindowGlyph={true}/>}
         </div>
     );
 }
 
-const GlyphDiv = React.memo(({id, src, styles, imgStyles, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => {
+const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => {
     console.log('drawing child', id, 'isSelected', isSelected, "isWindowGlyph", isWindowGlyph);
     const regularOp = 0.4, hoveredOp=0.75, selectedOp=1;
     const [opacity, setOpacity] = useState(!isWindowGlyph ? regularOp : 1);
     const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
+    const src = cache[id], imgStyles = glyphStyles[id]?.imgStyles;
 
     const handleMouseOver = () => {
         if (!isWindowGlyph) { // no !isSelected for more elegant deselecting
@@ -64,8 +65,7 @@ const GlyphDiv = React.memo(({id, src, styles, imgStyles, isSelected=false, setW
             marginTop:vh(-1),
             marginLeft:6, 
             marginRight:6,
-            opacity:isSelected ? selectedOp : opacity, 
-            ...styles
+            opacity:isSelected ? selectedOp : opacity
         }}
         onMouseOver={()=>handleMouseOver()}
         onMouseOut={()=>handleMouseOut()}
@@ -80,7 +80,7 @@ const SplashScreen = () => {
     const [windowGlyphId, setWindowGlyphId] = useState(null);
     return (
         <div>
-        <div style={{backgroundColor:"#a2d2ff", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
+        <div style={{backgroundColor:"#F0857D", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
             {row_nums.map((row) => (
                 <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", marginBottom:vh(marginsY[row])}}> 
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
@@ -88,17 +88,17 @@ const SplashScreen = () => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
+                                <GlyphDiv key={glyphId} id={glyphId} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
-                    <GlyphDiv id={getGlyphId(row,0)} src={cache[getGlyphId(row,0)]} {...glyphStyles[getGlyphId(row,0)]} isSelected={getGlyphId(row,0)===windowGlyphId} setWindowGlyphId={setWindowGlyphId} />
+                    <GlyphDiv id={getGlyphId(row,0)} isSelected={getGlyphId(row,0)===windowGlyphId} setWindowGlyphId={setWindowGlyphId} />
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
                         {right_cols.map((col) => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} src={cache[glyphId]} {...glyphStyles[glyphId]} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
+                                <GlyphDiv key={glyphId} id={glyphId} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
