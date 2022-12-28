@@ -29,20 +29,21 @@ const Window = ({glyphId}) => {
     );
 }
 
-const GlyphDiv = ({id, src, styles, imgStyles, setWindowGlyphId, isWindowGlyph=false}) => {
-    const [opacity, setOpacity] = useState(!isWindowGlyph ? 0.5 : 1);
+const GlyphDiv = React.memo(({id, src, styles, imgStyles, setWindowGlyphId, isWindowGlyph=false}) => {
+    console.log('drawing child', id);
+    const [opacity, setOpacity] = useState(!isWindowGlyph ? 0.4 : 0.75);
     const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
 
     const handleMouseOver = () => {
         if (!isWindowGlyph) {
             setWindowGlyphId(id);
-            setOpacity(1); 
+            setOpacity(0.75); 
         } 
     };
 
     const handleMouseOut = () => {
         if (!isWindowGlyph) {
-            setOpacity(0.5); 
+            setOpacity(0.4); 
         } 
     };
 
@@ -66,7 +67,7 @@ const GlyphDiv = ({id, src, styles, imgStyles, setWindowGlyphId, isWindowGlyph=f
         <img src={src} alt="glyph" style={{...imgStyles}}/>
     </div>
     )
-};
+});
 
 const SplashScreen = () => {
     const [windowGlyphId, setWindowGlyphId] = useState(null);
