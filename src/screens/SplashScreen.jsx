@@ -184,7 +184,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+indicDy), marginRight:0}
     },
     glyph_1_n6: {
-        imgStyles: {height:vh(capHeight+nonIndicAbugDy)}
+        imgStyles: {height:vh(capHeight+nonIndicAbugDy), marginRight:vw(0.4)}
     },
     glyph_1_n5: {
         imgStyles: {height:vh(capHeight), marginRight:-7}
