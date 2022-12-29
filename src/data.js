@@ -5,7 +5,8 @@ const WritingSystem = {
     Syllabary: "Syllabary",
     Alphasyllabary: "Alphasyllabary",
     Logosyllabary: "Logosyllabary",
-    Pictography: "Pictography"
+    Semisyllabary: "Semisyllabary",
+    Pictography: "Pictography",
 }
 
 export const glyphInfo = {
@@ -75,17 +76,17 @@ export const glyphInfo = {
         script: 'Cyrillic',
         language: 'Kyrgyz',
     },
-    glyph_0_p4: { // ޝ
-        codePoint: 0x79d,
-        writingSystem: WritingSystem.Abugida,
-        script: 'Thaana',
-        language: 'Maldivian',
-    },
-    glyph_0_p5: { // რ
+    glyph_0_p4: { // რ
         codePoint: 0x10e0,
         writingSystem: WritingSystem.Alphabet,
         script: 'Georgian',
         language: 'Georgian',
+    },
+    glyph_0_p5: { // ޝ
+        codePoint: 0x79d,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Thaana',
+        language: 'Maldivian',
     },
     glyph_0_p6: { // அ
         codePoint: 0xb85,
@@ -156,7 +157,7 @@ export const glyphInfo = {
     glyph_1_p2: { // উ
         codePoint: 0x989,
         writingSystem: WritingSystem.Abugida,
-        script: 'Bengali',
+        script: 'Bengali-Assamese',
         language: 'Bangla',
     },
     glyph_1_p3: { // 區
@@ -317,7 +318,7 @@ export const glyphInfo = {
     },
     glyph_3_n2: { // ㄖ
         codePoint: 0x3116,
-        writingSystem: WritingSystem.Alphabet,
+        writingSystem: WritingSystem.Semisyllabary,
         script: 'Bopomofo',
         language: 'Mandarin',
     },
@@ -417,11 +418,11 @@ export const glyphInfo = {
         script: 'Mende Kikakui',
         language: 'Mende',
     },
-    glyph_4_0: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_0: { // 한
+        codePoint: 0xd55c,
+        writingSystem: WritingSystem.Alphasyllabary,
+        script: 'Hangeul',
+        language: 'Korean',
     },
     glyph_4_p1: { // Й
         codePoint: 0x419,
@@ -429,220 +430,220 @@ export const glyphInfo = {
         script: 'Cyrillic',
         language: 'Russian',
     },
-    glyph_4_p2: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_p2: { // Ա
+        codePoint: 0x531,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Armenian',
+        language: 'Armenian',
     },
-    glyph_4_p3: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_p3: { // N
+        codePoint: 0x4e,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Latin',
+        language: 'English',
     },
-    glyph_4_p4: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_p4: { // ጨ
+        codePoint: 0x1328,
+        writingSystem: WritingSystem.Abugida,
+        script: "Ge'ez",
+        language: 'Harari',
     },
-    glyph_4_p5: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_p5: { // ळ
+        codePoint: 0x933,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Devanagari',
+        language: 'Marathi',
     },
-    glyph_4_p6: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_p6: { // ཫ
+        codePoint: 0xf6b,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Tibetan',
+        language: 'Lhasa Tibetan',
     },
-    glyph_4_p7: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_4_p7: { // Д
+        codePoint: 0x414,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Cyrillic',
+        language: 'Russian',
     },
-    glyph_5_n7: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n7: { // 🤌
+        codePoint: 0x1f90c,
+        writingSystem: WritingSystem.Pictography,
+        script: 'Emoji',
+        language: null,
     },
-    glyph_5_n6: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n6: { // 𑃤
+        codePoint: 0x110e4,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Sorang Sompeng',
+        language: 'Sora',
     },
-    glyph_5_n5: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n5: { // ꕥ
+        codePoint: 0xa565,
+        writingSystem: WritingSystem.Syllabary,
+        script: 'Vai',
+        language: 'Vai',
     },
-    glyph_5_n4: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n4: { // ঐ
+        codePoint: 0x990,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Bengali-Assamese',
+        language: 'Assamese',
     },
-    glyph_5_n3: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n3: { // Ѥ
+        codePoint: 0x464,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Cyrillic',
+        language: 'Old Church Slavonic',
     },
-    glyph_5_n2: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n2: { // ß
+        codePoint: 0xdf,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Latin',
+        language: 'German',
     },
-    glyph_5_n1: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_n1: { // ઐ
+        codePoint: 0xa90,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Gujarati',
+        language: 'Gujarati',
     },
-    glyph_5_0: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_0: { // ⵣ
+        codePoint: 0x2d63,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Tifinagh',
+        language: 'Tashelhit',
     },
-    glyph_5_p1: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p1: { // ࠀ
+        codePoint: 0x800,
+        writingSystem: WritingSystem.Abjad,
+        script: "Samaritan",
+        language: 'Samaritan Hebrew',
     },
-    glyph_5_p2: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p2: { // Ꮞ
+        codePoint: 0x13ce,
+        writingSystem: WritingSystem.Syllabary,
+        script: "Cherokee",
+        language: "Cherokee",
     },
-    glyph_5_p3: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p3: { // Ф
+        codePoint: 0x424,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Cyrillic',
+        language: 'Tajik',
     },
-    glyph_5_p4: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p4: { // ꦖ
+        codePoint: 0xa996,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Javanese',
+        language: 'Javanese',
     },
-    glyph_5_p5: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p5: { // Э
+        codePoint: 0x42d,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Cyrillic',
+        language: 'Tuvan',
     },
-    glyph_5_p6: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p6: { // أ
+        codePoint: 0x623,
+        writingSystem: WritingSystem.Abjad,
+        script: 'Arabic',
+        language: 'Farsi',
     },
-    glyph_5_p7: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_5_p7: { // 𖬕
+        codePoint: 0x16b15,
+        writingSystem: WritingSystem.Semisyllabary,
+        script: 'Pahawh Hmong',
+        language: 'Hmong Daw',
     },
-    glyph_6_n7: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n7: { // ढ
+        codePoint: 0x922,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Devanagari',
+        language: 'Hindi',
     },
-    glyph_6_n6: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n6: { // 臣
+        codePoint: 0x81e3,
+        writingSystem: WritingSystem.Logosyllabary,
+        script: 'Han',
+        language: 'Mandarin',
     },
-    glyph_6_n5: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n5: { // ꤎ
+        codePoint: 0xa90e,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Kayah Li',
+        language: 'Eastern Kayah',
     },
-    glyph_6_n4: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n4: { // ꯄ
+        codePoint: 0xabc4,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Meitei',
+        language: 'Manipuri',
     },
-    glyph_6_n3: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n3: { // ሐ
+        codePoint: 0x1210,
+        writingSystem: WritingSystem.Abugida,
+        script: "Ge'ez",
+        language: 'Tigrinya',
     },
-    glyph_6_n2: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n2: { // ზ
+        codePoint: 0x10d6,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Georgian',
+        language: 'Georgian',
     },
-    glyph_6_n1: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_n1: { // 𑣿
+        codePoint: 0x118ff,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Warang Citi',
+        language: 'Ho',
     },
-    glyph_6_0: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_0: { // 𐓃
+        codePoint: 0x104c3,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Osage',
+        language: 'Osage',
     },
-    glyph_6_p1: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p1: { // ฬ
+        codePoint: 0xe2c,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Thai',
+        language: 'Thai',
     },
-    glyph_6_p2: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p2: { // ח(hebrew)
+        codePoint: 0x5d7,
+        writingSystem: WritingSystem.Abjad,
+        script: 'Hebrew',
+        language: 'Hebrew',
     },
-    glyph_6_p3: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p3: { // Đ
+        codePoint: 0x110,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Latin',
+        language: 'Vietnamese',
     },
-    glyph_6_p4: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p4: { // 🌲
+        codePoint: 0x1f332,
+        writingSystem: WritingSystem.Pictography,
+        script: 'Emoji',
+        language: null,
     },
-    glyph_6_p5: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p5: { // ಔ
+        codePoint: 0xc94,
+        writingSystem: WritingSystem.Abugida,
+        script: 'Kannada',
+        language: 'Kannada',
     },
-    glyph_6_p6: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p6: { // ᦁ
+        codePoint: 0x1981,
+        writingSystem: WritingSystem.Abugida,
+        script: 'New Tai Lue',
+        language: 'Tai Lue',
     },
-    glyph_6_p7: {
-        codePoint: 0x0,
-        writingSystem: '',
-        script: '',
-        language: '',
+    glyph_6_p7: { // 𐴍
+        codePoint: 0x10d0d,
+        writingSystem: WritingSystem.Alphabet,
+        script: 'Hanifi Rohingya',
+        language: 'Rohingya',
     }
 }

@@ -38,7 +38,7 @@ const Window = ({glyphId}) => {
 
 const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => {
     console.log('drawing child', id, 'isSelected', isSelected, "isWindowGlyph", isWindowGlyph);
-    const regularOp = 0.4, hoveredOp=0.75, selectedOp=1;
+    const regularOp = 0.4, hoveredOp=0.7, selectedOp=1;
     const [opacity, setOpacity] = useState(!isWindowGlyph ? regularOp : 1);
     const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
     const src = cache[id], imgStyles = glyphStyles[id]?.imgStyles;
@@ -455,7 +455,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight)}
     },
     glyph_6_p6: {
-        imgStyles: {height:vh(capHeight+6), marginBottom:vh(-4.5), marginLeft:vw(0.5)}
+        imgStyles: {height:vh(capHeight+4), marginBottom:vh(-4.2)}
     },
     glyph_6_p7: {
         imgStyles: {height:vh(capHeight)}
