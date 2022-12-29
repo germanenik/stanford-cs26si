@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { glyphDescription } from "../data";
+import { glyphInfo } from "../data";
 import { getBaseFileName, getGlyphId } from "../util";
 import './SplashScreen.css'
 
@@ -24,7 +24,14 @@ const vw = (num) => `${num}vw`;
 const Window = ({glyphId}) => {
     return (
         <div style={{backgroundColor:"white", width:"25.5vw", height:"34vh", position:"fixed", bottom:"10vh", right:"8.8vw", borderRadius:20}}>
-            {glyphId && <GlyphDiv id={glyphId} isWindowGlyph={true}/>}
+            {glyphId && <div>
+                <GlyphDiv id={glyphId} isWindowGlyph={true}/>
+                <text>{`Writing System: ${glyphInfo[glyphId].writingSystem}`}</text>
+                <br />
+                <text>{`Script: ${glyphInfo[glyphId].script}`}</text>
+                <br />
+                <text>{`Ex. Language: ${glyphInfo[glyphId].language}`}</text>
+            </div>}
         </div>
     );
 }
@@ -142,7 +149,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+indicDy)}
     },
     glyph_0_n5: {
-        imgStyles: {height:vh(capHeight+nonIndicAbugDy), marginLeft:vw(0.3), marginRight:vw(0.5)}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(0.3), marginRight:vw(0.5)}
     },
     glyph_0_n4: {
         imgStyles: {height:vh(capHeight)}
