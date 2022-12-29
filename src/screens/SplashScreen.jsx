@@ -284,10 +284,10 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+2), marginBottom:vh(-2)}
     },
     glyph_3_n6: {
-        imgStyles: {height:vh(capHeight+3), marginBottom:vh(-1.7)}
+        imgStyles: {height:vh(capHeight+3), marginBottom:vh(-1.5)}
     },
     glyph_3_n5: {
-        imgStyles: {height:vh(capHeight+3), marginBottom:vh(-2.5), marginRight:vw(0.2), marginLeft:vw(0.2)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_3_n4: {
         imgStyles: {height:vh(capHeight+nonIndicAbugDy+2.5), marginBottom:vh(-2.5)}
@@ -299,7 +299,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+1.5), marginBottom:vh(-1.5), marginRight:vw(0.3)}
     },
     glyph_3_n1: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight+3), marginBottom:vh(-2.5), marginRight:vw(0.2), marginLeft:vw(0.2)}
     },
     glyph_3_0: {
         imgStyles: {height:vh(capHeight+2), marginBottom:vh(-2)}
@@ -308,7 +308,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight+nonIndicAbugDy)}
     },
     glyph_3_p2: {
-        imgStyles: {height:vh(capHeight-1)}
+        imgStyles: {height:vh(capHeight-3)}
     },
     glyph_3_p3: {
         imgStyles: {height:vh(capHeight), marginLeft:vw(0.5)}
@@ -350,10 +350,10 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight), marginLeft:vw(0.5)}
     },
     glyph_4_p1: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight+3)}
     },
     glyph_4_p2: {
-        imgStyles: {height:vh(capHeight+3)}
+        imgStyles: {height:vh(capHeight)}
     },
     glyph_4_p3: {
         imgStyles: {height:vh(capHeight), marginLeft:vw(0.3),  marginRight:vw(0.3)}
