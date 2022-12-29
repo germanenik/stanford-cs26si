@@ -176,7 +176,7 @@ const glyphStyles = {
         imgStyles: {height:vh(capHeight), marginLeft:vw(-1)}
     },
     glyph_0_p4: {
-        imgStyles: {height:vh(capHeight)}
+        imgStyles: {height:vh(capHeight), marginLeft:vw(0.5)}
     },
     glyph_0_p5: {
         imgStyles: {height:vh(capHeight+arabDy)}
