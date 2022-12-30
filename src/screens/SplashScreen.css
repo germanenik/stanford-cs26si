@@ -1,3 +1,61 @@
 .invert {
     filter: invert(100%);
 }
+
+.splash-button {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 10px 60px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.window-glyph {
+    position: absolute;
+    top:10px;
+    right:10px;
+}
+
+/* phones */
+@media screen and (max-width: 600px) {
+    .h1 {
+        font-size: small;
+    }
+
+    .window-div {
+        min-width: 40vw; 
+        min-height: 15vh;
+        position:fixed; 
+        bottom:13vh; 
+        right:7vw; 
+        padding:30px; 
+    }
+
+    /* .splash-button {
+        bottom:30px;
+        right:30px;
+    } */
+}
+
+/* tablets, laptops */
+@media screen and (min-width: 600px) {
+    .h1 {
+        font-size:xx-large;
+    }
+
+    .window-div {
+        min-width: 21vw; 
+        min-height: 26vh;
+        position:fixed; 
+        bottom:10vh; 
+        right:8.8vw; 
+        padding:30px;
+    }
+
+    /* .splash-button {
+        bottom:30px;
+        right:30px;
+    } */
+}

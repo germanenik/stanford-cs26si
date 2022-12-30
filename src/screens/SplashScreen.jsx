@@ -21,17 +21,42 @@ const emojiIDs = Array.from(["glyph_6_p4", "glyph_5_n7", "glyph_3_p7", "glyph_2_
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
 
+const Button = () => (
+    <div 
+        className="splash-button"
+        onClick={()=>{}}
+    >
+        See More
+    </div>
+);
+
 const Window = ({glyphId}) => {
     return (
-        <div style={{backgroundColor:"white", width:"25.5vw", height:"34vh", position:"fixed", bottom:"10vh", right:"8.8vw", borderRadius:20}}>
-            {glyphId && <div>
-                <GlyphDiv id={glyphId} isWindowGlyph={true}/>
-                <text>{`Writing System: ${glyphInfo[glyphId].writingSystem}`}</text>
+        <div className="window-div" 
+            style={{
+                backgroundColor:"white", 
+                borderRadius:"20px",
+            }}
+        >
+            {glyphId ? 
+            <div style={{display:"flex", 
+                flexDirection:"column",
+                justifyContent:"space-between",
+                alignItems:"flex-start"}}
+            >
+                <GlyphDiv id={glyphId} className="window-glyph" isWindowGlyph={true}/>
+                <text>{glyphInfo[glyphId].writingSystem}</text>
+                <text>{glyphInfo[glyphId].script}</text>
+                <text>{glyphInfo[glyphId].language}</text>
+            </div> :
+            <div>
+                <text className="h1">CS26SI @ Stanford</text>
                 <br />
-                <text>{`Script: ${glyphInfo[glyphId].script}`}</text>
-                <br />
-                <text>{`Ex. Language: ${glyphInfo[glyphId].language}`}</text>
-            </div>}
+                <text>by German Enik</text>
+            </div>
+            }
+            <br /><br />
+            <Button />
         </div>
     );
 }
