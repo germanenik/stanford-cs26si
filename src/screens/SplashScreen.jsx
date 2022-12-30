@@ -109,6 +109,8 @@ const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWin
         }
     }
 
+    const codePoints = glyphInfo[id].codePoint;
+
     return (
     <div 
         className={className}
@@ -126,7 +128,7 @@ const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWin
         onMouseOut={()=>handleMouseOut()}
         onClick={()=>handleOnClick()}
     >
-        <img src={src} alt="glyph" style={{...finalImgStyles}}/>
+        <img src={src} alt={String.fromCodePoint(...codePoints)} style={{...finalImgStyles}}/>
     </div>
     )
 });
