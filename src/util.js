@@ -31,4 +31,4 @@ export const styleCodepoint = (num) => {
         }
     }
     return prefix + codepoint;
-}
+    }

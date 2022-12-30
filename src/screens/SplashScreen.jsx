@@ -58,9 +58,11 @@ const Window = ({glyphId}) => {
                     <WindowEntry str1={info.language} str2={"Ex. Language"} />
                 </div>
                 <div style={{display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-end", height:"inherit"}}>
-                    <div style={{display: "flex", flexDirection:"column", justifyContent: "flex-start", alignItems:"flex-end"}}>
+                    <div style={{display: "flex", flexDirection:"column", alignItems:"flex-end", paddingTop:6}}>
                         <GlyphDiv id={glyphId} isWindowGlyph={true}/>
-                        <div className="code-point" style={{paddingTop:5}}>{styleCodepoint(info.codePoint)}</div>
+                        {info.codePoint.map((code) => (
+                            <div key={`codepoint-${code}`} className="code-point" style={{paddingTop:5}}>{styleCodepoint(code)}</div>
+                        ))}
                     </div>
                     {/* <Button /> */}
                 </div>
