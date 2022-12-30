@@ -68,9 +68,9 @@ const Window = ({glyphId}) => {
                 </div>
             </div> :
             <div>
-                <text className="h1">CS26SI @ Stanford</text>
-                <br />
-                <text>by German Enik</text>
+                <div className="title-1">CS26SI</div>
+                {/* <div className="title-2">at Stanford</div> */}
+                <div className="title-3">by German Enik</div>
             </div>
             }
         </div>

@@ -22,8 +22,16 @@
 
 /* tablets, laptops */
 @media screen and (min-width: 800px) {
-    .h1 {
-        font-size:xx-large;
+    .title-1 {
+        font-size: 7vh;
+    }
+
+    .title-2 {
+        font-size: 5vh;
+    }
+
+    .title-3 {
+        font-size: 3vh;
     }
 
     .window-entry-h1 {
@@ -50,7 +58,15 @@
 
 /* phones */
 @media screen and (max-width: 800px) {
-    .h1 {
+    .title-1 {
+        font-size: small;
+    }
+
+    .title-2 {
+        font-size: small;
+    }
+
+    .title-3 {
         font-size: small;
     }
 
