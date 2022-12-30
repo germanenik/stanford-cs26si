@@ -11,13 +11,13 @@ const WritingSystem = {
 
 export const glyphInfo = {
     glyph_0_n7: { // ఒ
-        codePoint: 0x0C12,
+        codePoint: 0xC12,
         writingSystem: WritingSystem.Abugida,
         script: 'Telugu',
         language: 'Telugu',
     },
     glyph_0_n6: { // श
-        codePoint: 0x0936,
+        codePoint: 0x936,
         writingSystem: WritingSystem.Abugida,
         script: 'Devanagari',
         language: 'Nepali',
@@ -329,7 +329,7 @@ export const glyphInfo = {
         language: 'Arabic',
     },
     glyph_3_0: { // Ҩ
-        codePoint: 0x0,
+        codePoint: 0x4a8,
         writingSystem: WritingSystem.Alphabet,
         script: 'Cyrillic',
         language: 'Abkhaz',

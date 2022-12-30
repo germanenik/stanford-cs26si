@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { glyphInfo } from "../data";
-import { getBaseFileName, getGlyphId } from "../util";
+import { getBaseFileName, getGlyphId, scaleVh, styleCodepoint } from "../util";
 import './SplashScreen.css'
 
 // TODOs: make all horozintal stuff relative, add min in terms of px
@@ -21,33 +21,49 @@ const emojiIDs = Array.from(["glyph_6_p4", "glyph_5_n7", "glyph_3_p7", "glyph_2_
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
 
-const Button = () => (
+const Button = ({paddingPx}) => (
     <div 
-        className="splash-button"
         onClick={()=>{}}
+        className="splash-button"
+        style={{position: "absolute", bottom:paddingPx, right:paddingPx}}
     >
         See More
     </div>
 );
 
+const WindowEntry = ({str1, str2}) => (
+    /*str1 might be null (if emoji)*/
+    <div>
+        <div className="window-entry-h1">{str1 ?? ""}</div>
+        <div className="window-entry-h2">{str1 ? str2 : ""}</div>
+    </div>
+);
+
 const Window = ({glyphId}) => {
+    const paddingPx = 30;
+    const info = glyphId ? glyphInfo[glyphId] : null;
     return (
         <div className="window-div" 
             style={{
                 backgroundColor:"white", 
-                borderRadius:"20px",
+                borderRadius:20,
+                padding: paddingPx
             }}
         >
             {glyphId ? 
-            <div style={{display:"flex", 
-                flexDirection:"column",
-                justifyContent:"space-between",
-                alignItems:"flex-start"}}
-            >
-                <GlyphDiv id={glyphId} className="window-glyph" isWindowGlyph={true}/>
-                <text>{glyphInfo[glyphId].writingSystem}</text>
-                <text>{glyphInfo[glyphId].script}</text>
-                <text>{glyphInfo[glyphId].language}</text>
+            <div style={{display: "flex", flexDirection:"row", height:"inherit", width:"inherit"}}>
+                <div style={{display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-start", height:"inherit", width:"inherit"}}>
+                    <WindowEntry str1={info.writingSystem} str2={"Writing System"} />
+                    <WindowEntry str1={info.script} str2={"Script"} />
+                    <WindowEntry str1={info.language} str2={"Ex. Language"} />
+                </div>
+                <div style={{display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-end", height:"inherit"}}>
+                    <div style={{display: "flex", flexDirection:"column", justifyContent: "flex-start", alignItems:"flex-end"}}>
+                        <GlyphDiv id={glyphId} isWindowGlyph={true}/>
+                        <div style={{paddingTop:5}}>{styleCodepoint(info.codePoint)}</div>
+                    </div>
+                    <text>{glyphInfo[glyphId].language}</text>
+                </div>
             </div> :
             <div>
                 <text className="h1">CS26SI @ Stanford</text>
@@ -55,18 +71,23 @@ const Window = ({glyphId}) => {
                 <text>by German Enik</text>
             </div>
             }
-            <br /><br />
-            <Button />
         </div>
     );
 }
 
 const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => {
-    console.log('drawing child', id, 'isSelected', isSelected, "isWindowGlyph", isWindowGlyph);
+    // console.log('drawing child', id, 'isSelected', isSelected, "isWindowGlyph", isWindowGlyph);
     const regularOp = 0.4, hoveredOp=0.7, selectedOp=1;
     const [opacity, setOpacity] = useState(!isWindowGlyph ? regularOp : 1);
     const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
     const src = cache[id], imgStyles = glyphStyles[id]?.imgStyles;
+
+    // filter img styles
+    const factor = 0.6;
+    const finalImgStyles = !isWindowGlyph ? imgStyles : {
+        height: scaleVh(imgStyles.height, factor),
+        // marginBottom: scaleVh(imgStyles.marginBottom, factor)
+    };
 
     const handleMouseOver = () => {
         if (!isWindowGlyph) { // no !isSelected for more elegant deselecting
@@ -91,19 +112,19 @@ const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWin
         className={className}
         id={id} 
         style={{
-            display:"flex", 
+            display:"inline-flex", 
             flexDirection:"row",
             alignItems:"flex-end",
             marginTop:vh(-1),
-            marginLeft:6, 
-            marginRight:6,
+            marginLeft: !isWindowGlyph ? 6 : 0, 
+            marginRight: !isWindowGlyph ? 6 : 0,
             opacity:isSelected ? selectedOp : opacity
         }}
         onMouseOver={()=>handleMouseOver()}
         onMouseOut={()=>handleMouseOut()}
         onClick={()=>handleOnClick()}
     >
-        <img src={src} alt="glyph" style={{...imgStyles}}/>
+        <img src={src} alt="glyph" style={{...finalImgStyles}}/>
     </div>
     )
 });

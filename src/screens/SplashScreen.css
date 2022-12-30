@@ -12,50 +12,51 @@
     cursor: pointer;
 }
 
-.window-glyph {
-    position: absolute;
-    top:10px;
-    right:10px;
+.window-entry-h1 {
+    color:"black";
+}
+
+.window-entry-h2 {
+    color:#808080;
+}
+
+/* tablets, laptops */
+@media screen and (min-width: 800px) {
+    .h1 {
+        font-size:xx-large;
+    }
+
+    .window-entry-h1 {
+        font-size: 3.5vh;
+    }
+
+    .window-entry-h2 {
+        font-size: 2vh;
+    }
+
+    .window-div {
+        width: 43vh; 
+        /* aspect-ratio: 3/2; */
+        height: 26vh;
+        position:absolute; 
+        bottom:10vh; 
+        right:8.8vw; 
+    }
 }
 
 /* phones */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .h1 {
         font-size: small;
     }
 
     .window-div {
-        min-width: 40vw; 
-        min-height: 15vh;
-        position:fixed; 
+        /* width: 40vw;  */
+        /* aspect-ratio: 3/2; */
+        width: 23vh;
+        height: 15vh;
+        position:absolute; 
         bottom:13vh; 
         right:7vw; 
-        padding:30px; 
     }
-
-    /* .splash-button {
-        bottom:30px;
-        right:30px;
-    } */
-}
-
-/* tablets, laptops */
-@media screen and (min-width: 600px) {
-    .h1 {
-        font-size:xx-large;
-    }
-
-    .window-div {
-        min-width: 21vw; 
-        min-height: 26vh;
-        position:fixed; 
-        bottom:10vh; 
-        right:8.8vw; 
-        padding:30px;
-    }
-
-    /* .splash-button {
-        bottom:30px;
-        right:30px;
-    } */
 }
