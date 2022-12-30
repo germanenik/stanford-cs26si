@@ -34,6 +34,10 @@
         font-size: 2vh;
     }
 
+    .code-point {
+        font-size: 2.5vh;
+    }
+
     .window-div {
         width: 43vh; 
         /* aspect-ratio: 3/2; */
@@ -53,10 +57,22 @@
     .window-div {
         /* width: 40vw;  */
         /* aspect-ratio: 3/2; */
-        width: 23vh;
-        height: 15vh;
+        width: 30vh;
+        height: 18vh;
         position:absolute; 
         bottom:13vh; 
         right:7vw; 
+    }
+
+    .window-entry-h1 {
+        font-size: 2.5vh;
+    }
+
+    .window-entry-h2 {
+        font-size: 1.5vh;
+    }
+
+    .code-point {
+        font-size: 2vh;
     }
 }

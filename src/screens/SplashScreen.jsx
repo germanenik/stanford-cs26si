@@ -25,7 +25,7 @@ const Button = ({paddingPx}) => (
     <div 
         onClick={()=>{}}
         className="splash-button"
-        style={{position: "absolute", bottom:paddingPx, right:paddingPx}}
+        // style={{position: "absolute", bottom:paddingPx, right:paddingPx}}
     >
         See More
     </div>
@@ -60,9 +60,9 @@ const Window = ({glyphId}) => {
                 <div style={{display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-end", height:"inherit"}}>
                     <div style={{display: "flex", flexDirection:"column", justifyContent: "flex-start", alignItems:"flex-end"}}>
                         <GlyphDiv id={glyphId} isWindowGlyph={true}/>
-                        <div style={{paddingTop:5}}>{styleCodepoint(info.codePoint)}</div>
+                        <div className="code-point" style={{paddingTop:5}}>{styleCodepoint(info.codePoint)}</div>
                     </div>
-                    <text>{glyphInfo[glyphId].language}</text>
+                    {/* <Button /> */}
                 </div>
             </div> :
             <div>
