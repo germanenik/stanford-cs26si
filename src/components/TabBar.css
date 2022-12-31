@@ -1,0 +1,14 @@
+.hoverable:hover {
+    background-color: rgb(87, 87, 87);
+    cursor: pointer;
+}
+
+
+
+.bar {
+    background-color: rgb(170, 170, 170);
+}
+
+.bar-button {
+    border-radius: 8px;
+}

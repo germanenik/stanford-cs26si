@@ -1,10 +1,11 @@
 import './App.css';
 import SplashScreen from './screens/SplashScreen';
+import MainScreen from './screens/MainScreen';
 
 function App() {
   return (
     <div>
-        <SplashScreen />
+      <MainScreen />
     </div>
   );
 }
