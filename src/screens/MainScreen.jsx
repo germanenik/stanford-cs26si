@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import TabBar from '../components/TabBar1';
+import TabBar from '../components/TabBar';
 import SplashScreen from "./SplashScreen";
 
 const MainScreen = () => {
     return (
         <div>
-            <SplashScreen />
+            <TabBar />
         </div>
     )
 }
