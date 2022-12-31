@@ -21,13 +21,12 @@ const emojiIDs = Array.from(["glyph_6_p4", "glyph_5_n7", "glyph_3_p7", "glyph_2_
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
 
-const Button = ({paddingPx}) => (
+const Button = () => (
     <div 
         onClick={()=>{}}
         className="splash-button"
-        // style={{position: "absolute", bottom:paddingPx, right:paddingPx}}
     >
-        See More
+        {"See Class"}
     </div>
 );
 
@@ -52,25 +51,31 @@ const Window = ({glyphId}) => {
         >
             {glyphId ? 
             <div style={{display: "flex", flexDirection:"row", height:"inherit", width:"inherit"}}>
-                <div style={{display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-start", height:"inherit", width:"inherit"}}>
+                <div style={{flex:0.5, display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-start", height:"inherit", width:"inherit"}}>
                     <WindowEntry str1={info.writingSystem} str2={"Writing System"} />
                     <WindowEntry str1={info.script} str2={"Script"} />
                     <WindowEntry str1={info.language} str2={"Ex. Language"} />
                 </div>
-                <div style={{display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-end", height:"inherit"}}>
+                <div style={{flex:0.1}} />
+                <div style={{flex:0.4, display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-end", height:"inherit"}}>
                     <div style={{display: "flex", flexDirection:"column", alignItems:"flex-end", paddingTop:6}}>
                         <GlyphDiv id={glyphId} isWindowGlyph={true}/>
                         {info.codePoint.map((code) => (
                             <div key={`codepoint-${code}`} className="code-point" style={{paddingTop:5}}>{styleCodepoint(code)}</div>
                         ))}
                     </div>
-                    {/* <Button /> */}
+                    <Button />
                 </div>
             </div> :
-            <div>
-                <div className="title-1">CS26SI</div>
-                {/* <div className="title-2">at Stanford</div> */}
-                <div className="title-3">by German Enik</div>
+            <div style={{display:'flex', flexDirection:'column', height:"inherit", width:"inherit"}}> 
+                <div style={{flex:0.5}}> 
+                    <div className="title-1">CS26SI</div>
+                    {/* <div className="title-2">at Stanford</div> */}
+                    <div className="title-3">by German Enik</div>
+                </div>
+                <div style={{flex:0.5, display:'flex', flexDirection:'column', justifyContent:'flex-end', alignItems:'flex-end'}}>
+                    <Button />
+                </div>
             </div>
             }
         </div>
@@ -185,10 +190,10 @@ const hanziDy = 2;
 const indicDy = -1;
 const nonIndicAbugDy = -2;
 const arabDy = -4;
-const rowHeight = 16.4;
+// const rowHeight = 16.4;
 const marginY = 1.8;
 
-const rowHeights = [rowHeight, rowHeight-1, rowHeight, rowHeight, rowHeight, rowHeight, rowHeight];
+// const rowHeights = [rowHeight, rowHeight-1, rowHeight, rowHeight, rowHeight, rowHeight, rowHeight];
 const marginsY = [-0.2, marginY-1.2, marginY, marginY+1, marginY, marginY, marginY]
 
 const glyphStyles = {
