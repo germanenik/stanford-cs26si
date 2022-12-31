@@ -39,14 +39,14 @@ const WindowEntry = ({str1, str2}) => (
 );
 
 const Window = ({glyphId}) => {
-    const paddingPx = 30;
+    // const paddingPx = 30;
     const info = glyphId ? glyphInfo[glyphId] : null;
     return (
         <div className="window-div" 
             style={{
                 backgroundColor:"white", 
                 borderRadius:20,
-                padding: paddingPx
+                // padding: paddingPx
             }}
         >
             {glyphId ? 

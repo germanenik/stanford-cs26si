@@ -59,6 +59,7 @@
         position:absolute; 
         bottom:10vh; 
         right:8.8vw; 
+        padding: 30px;
     }
 }
 
@@ -79,11 +80,12 @@
     .window-div {
         /* width: 40vw;  */
         /* aspect-ratio: 3/2; */
-        width: 30vh;
-        height: 18vh;
+        width: 35vh;
+        height: 20vh;
         position:absolute; 
         bottom:13vh; 
         right:7vw; 
+        padding: 20px;
     }
 
     .window-entry-h1 {
