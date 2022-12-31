@@ -32,9 +32,9 @@ const Button = () => (
 
 const WindowEntry = ({str1, str2}) => (
     /*str1 might be null (if emoji)*/
-    <div>
-        <div className="window-entry-h1">{str1 ?? ""}</div>
-        <div className="window-entry-h2">{str1 ? str2 : ""}</div>
+    <div style={{opacity: str1 ? 1 : 0, cursor: str1 ? "text" : "default"}}>
+        <div className="window-entry-h1">{str1 ?? "'"}</div>
+        <div className="window-entry-h2">{str1 ? str2 : "'"}</div>
     </div>
 );
 
