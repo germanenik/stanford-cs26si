@@ -1,13 +1,48 @@
+.inactive {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.arrow {
+    cursor: pointer;
+    /* width:30; */
+}
+
+.fade-in-image { animation: fadeIn 1s; }
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.container {
+    display: flex;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-bottom: 5vh;
+    max-height: 90vh;
+}
+
 /* tablets, laptops */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
     .container {
-        padding-right: 5vw;
-        padding-left: 5vw;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
+        flex-direction: row;
+        padding-top: 70px;
     }
 }
 
 /* phones */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .carousel-container {
+        padding-top: 20px;
+        height:100%;
+    }
 }
