@@ -3,6 +3,7 @@ import "./UnitScreen.css"
 import alph_ex from "../slides/alph-ex.png" 
 import abj_ex from "../slides/abj-ex.png"
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import TabBar from '../components/TabBar';
 
 const Carousel = ({imgs}) => {
     const size = imgs.length;
@@ -52,15 +53,18 @@ const Carousel = ({imgs}) => {
     );
 }
 
-const UnitScreen = ({unitName}) => {
+const UnitScreen = ({unit}) => {
     return (
+        <>
+        <TabBar />
         <div className="container">
             <div style={{flex:1}}>
-                <h1>Alphabets</h1>
+                <h1>{unit}</h1>
                 <div>description description description description description description description description description description description description description description description description</div>
             </div>
             <Carousel imgs={[alph_ex, abj_ex, abj_ex, alph_ex, abj_ex, abj_ex, alph_ex, abj_ex, abj_ex, abj_ex]} />
         </div>
+        </>
     );
 }
 

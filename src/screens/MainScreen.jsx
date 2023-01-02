@@ -6,8 +6,9 @@ import SplashScreen from "./SplashScreen";
 const MainScreen = () => {
     return (
         <div>
-            <TabBar />
-            <UnitScreen />
+            <SplashScreen />
+            {/* <TabBar />
+            <UnitScreen /> */}
         </div>
     )
 }

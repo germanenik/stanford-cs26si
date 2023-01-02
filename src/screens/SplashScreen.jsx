@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { glyphInfo } from "../data";
 import { getBaseFileName, getGlyphId, scaleVh, styleCodepoint } from "../util";
 import './SplashScreen.css'
@@ -21,14 +22,17 @@ const emojiIDs = Array.from(["glyph_6_p4", "glyph_5_n7", "glyph_3_p7", "glyph_2_
 const vh = (num) => `${num}vh`;
 const vw = (num) => `${num}vw`;
 
-const Button = () => (
-    <div 
-        onClick={()=>{}}
-        className="splash-button"
-    >
-        {"See Class"}
-    </div>
-);
+const Button = () => {
+    const navigate = useNavigate();
+    return (
+        <div 
+            onClick={()=>navigate('/unit1')}
+            className="splash-button"
+        >
+            {"See Class"}
+        </div>
+        )
+    };
 
 const WindowEntry = ({str1, str2}) => (
     /*str1 might be null (if emoji)*/
