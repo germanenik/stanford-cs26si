@@ -4,9 +4,6 @@ import alph_ex from "../slides/alph-ex.png"
 import abj_ex from "../slides/abj-ex.png"
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
-
-//BsFillCaretLeftFill
-//BsFillCaretRightFill
 const Carousel = ({imgs}) => {
     const size = imgs.length;
     const [activeIndex, setActiveIndex] = useState(0);
