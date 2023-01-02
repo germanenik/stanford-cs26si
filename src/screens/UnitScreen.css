@@ -23,7 +23,14 @@
     padding-right: 5vw;
     padding-left: 5vw;
     padding-bottom: 5vh;
-    max-height: 90vh;
+}
+
+.text-container {
+    flex: 1
+}
+
+.carousel-container {
+    flex: 2
 }
 
 /* tablets, laptops */

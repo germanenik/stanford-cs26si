@@ -1,17 +1,26 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./TabBar.css";
+import { unitData } from "../data";
 
-const ExpandedMenu = () => {
+const ExpandedMenu = ({clickHandler}) => {
+    
     return (
         <div style={{position:"absolute", left:"50%", transform: "translateX(-50%)", paddingTop: "4vh"}}
         >
             <div className="expanded-menu">
-                <div className="expanded-entry hoverable">Alphabets</div>
-                <div className="expanded-entry hoverable">Abjads</div>
-                <div className="expanded-entry hoverable">Abugidas</div>
-                <div className="expanded-entry hoverable">Syllabaries</div>
-                <div className="expanded-entry hoverable">Alphasyllabaries</div>
-                <div className="expanded-entry hoverable">Last</div>
+                {
+                    Object.entries(unitData).map(([key, value]) => {
+                        return (
+                        <div 
+                            key={`expanded-entry-${key}`} 
+                            className="expanded-entry hoverable"
+                            onClick={() => clickHandler(`/${key}`)}
+                        >
+                            {`${value.num}: ${value.name}`}
+                        </div>
+                    )})
+                }
             </div>
         </div>
     )
@@ -19,6 +28,8 @@ const ExpandedMenu = () => {
 
 const Tab = ({name, isExpandable=false}) => {
     const [hover, setHover] = useState(false);
+    const navigate = useNavigate();
+
     const handleMouseOver = () => {
         if (!hover) {
             setHover(true);
@@ -31,6 +42,12 @@ const Tab = ({name, isExpandable=false}) => {
             console.log("setting to false");
         }
     }
+
+    const handleEntryClick = (routeName) => {
+        navigate(routeName);
+        setHover(false);
+    }
+
     return (
         <div 
             style={{position:"relative"}}
@@ -44,7 +61,7 @@ const Tab = ({name, isExpandable=false}) => {
                     cursor: hover ? "pointer" : "initial"
                 }}
             >{name}</div>
-            {isExpandable && hover && <ExpandedMenu />}
+            {isExpandable && hover && <ExpandedMenu clickHandler={handleEntryClick}/>}
             
         </div>
     )

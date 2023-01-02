@@ -4,6 +4,7 @@ import alph_ex from "../slides/alph-ex.png"
 import abj_ex from "../slides/abj-ex.png"
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import TabBar from '../components/TabBar';
+import { unitData } from '../data';
 
 const Carousel = ({imgs}) => {
     const size = imgs.length;
@@ -17,7 +18,7 @@ const Carousel = ({imgs}) => {
     }
 
     return (
-        <div className="carousel-container" style={{flex: 2, display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", paddingLeft:"5vw", paddingRight:"5vw"}}>
+        <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", paddingLeft:"5vw", paddingRight:"5vw"}}>
             <div onClick={()=>handleArrowClick(-1)} className="arrow"><BsFillCaretLeftFill size={40}/></div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
@@ -27,7 +28,7 @@ const Carousel = ({imgs}) => {
                     // className={idx===activeIndex ? "active" : "inactive"}
                     src={imgs[activeIndex]} 
                     alt=""
-                    style={{maxWidth:"90%", height:"auto"}}/>
+                    style={{maxWidth:"90%", height:"auto", borderRadius:20, border:"5px #C8CDEF solid"}}/>
                 {/* ))} */}
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", width:"50%", paddingTop:20}}>
                     {imgs.map((_, idx) => (
@@ -54,17 +55,18 @@ const Carousel = ({imgs}) => {
 }
 
 const UnitScreen = ({unit}) => {
+    const data = unitData[unit];
     return (
-        <>
-        <TabBar />
-        <div className="container">
-            <div style={{flex:1}}>
-                <h1>{unit}</h1>
-                <div>description description description description description description description description description description description description description description description description</div>
+        <div style={{display:"flex", flexDirection:"column", minHeight:"100vh", backgroundColor:"#A9B1E6"}}>
+            <TabBar />
+            <div className="container">
+                <div className="text-container">
+                    <h1>{`Unit ${data.num}: ${data.name}`}</h1>
+                    <h4>{data.body}</h4>
+                </div>
+                <Carousel imgs={[alph_ex, abj_ex]} />
             </div>
-            <Carousel imgs={[alph_ex, abj_ex, abj_ex, alph_ex, abj_ex, abj_ex, alph_ex, abj_ex, abj_ex, abj_ex]} />
         </div>
-        </>
     );
 }
 

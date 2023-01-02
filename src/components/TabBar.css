@@ -17,6 +17,7 @@
     border-radius: 10px;
     padding: 5px;
     border: 1px grey solid;
+    background-color: white;
 }
 
 .expanded-entry {
@@ -25,6 +26,7 @@
     flex-direction: row;
     justify-content: flex-start;
     border-radius: 5px;
+    white-space: nowrap; 
     /* border-bottom: 1px black solid; */
 }
 
