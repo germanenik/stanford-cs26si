@@ -1,3 +1,41 @@
+export const unitData = {
+    unit1: {
+        num: 1,
+        name: "Alphabets",
+        body: "Alphabets are"
+    },
+    unit2: {
+        num: 2,
+        name: "Abjads",
+        body: "Abjads are"
+    },
+    unit3: {
+        num: 3,
+        name: "Abugidas",
+        body: "Abugidas are"
+    },
+    unit4: {
+        num: 4,
+        name: "Syllabaries",
+        body: "Syllabaries are"
+    },
+    unit5: {
+        num: 5,
+        name: "Alphasyllabaries",
+        body: "Alphasyllabaries are"
+    },
+    unit6: {
+        num: 6,
+        name: "Logosyllabaries",
+        body: "Logosyllabaries are"
+    },
+    unit7: {
+        num: 7,
+        name: "Unicode",
+        body: ""
+    }
+}
+
 const WritingSystem = {
     Abugida: "Abugida",
     Alphabet: "Alphabet",
