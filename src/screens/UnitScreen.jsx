@@ -20,14 +20,14 @@ const Carousel = ({imgs}) => {
             <div onClick={()=>handleArrowClick(-1)} className="arrow"><BsFillCaretLeftFill size={40}/></div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
-                {imgs.map((img, idx) => (
-                    <img 
-                        key={`slide-${idx}`} 
-                        className={idx===activeIndex ? "active" : "inactive"}
-                        src={img} 
-                        alt=""
-                        style={{maxWidth:"90%", height:"auto"}}/>
-                ))}
+                {/* {imgs.map((img, idx) => ( */}
+                <img 
+                    // key={`slide-${idx}`} 
+                    // className={idx===activeIndex ? "active" : "inactive"}
+                    src={imgs[activeIndex]} 
+                    alt=""
+                    style={{maxWidth:"90%", height:"auto"}}/>
+                {/* ))} */}
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", width:"50%", paddingTop:20}}>
                     {imgs.map((_, idx) => (
                         <div 
