@@ -3,6 +3,7 @@ import "./UnitScreen.css"
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import TabBar from '../components/TabBar';
 import { unitData } from '../data';
+import unitStyles from "../unitStyles";
 
 // importing pngs
 function importAllAsArr(r) {
@@ -25,7 +26,7 @@ Object.entries(unitData).forEach(([key, value], idx) => {
 // done
 
 
-const Carousel = ({imgs}) => {
+const Carousel = ({imgs, unit}) => {
     const size = imgs.length;
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -47,7 +48,7 @@ const Carousel = ({imgs}) => {
                     // className={idx===activeIndex ? "active" : "inactive"}
                     src={imgs[activeIndex]} 
                     alt=""
-                    style={{maxWidth:"90%", height:"auto", borderRadius:20, border:"5px #C8CDEF solid"}}/>
+                    style={{maxWidth:"90%", height:"auto", borderRadius:20, borderColor:unitStyles[unit].color1, borderWidth:"5px", borderStyle:"solid"}}/>
                 {/* ))} */}
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", width:"50%", paddingTop:20}}>
                     {imgs.map((_, idx) => (
@@ -76,14 +77,14 @@ const Carousel = ({imgs}) => {
 const UnitScreen = ({unit}) => {
     const data = unitData[unit];
     return (
-        <div style={{display:"flex", flexDirection:"column", minHeight:"100vh", backgroundColor:"#A9B1E6"}}>
+        <div style={{display:"flex", flexDirection:"column", minHeight:"100vh", backgroundColor:unitStyles[unit].color2}}>
             <TabBar unit={unit} />
             <div className="container">
                 <div className="text-container">
                     <h1>{`Unit ${data.num}: ${data.name}`}</h1>
                     <h4>{data.body}</h4>
                 </div>
-                <Carousel imgs={data.slides} />
+                <Carousel imgs={data.slides} unit={unit} />
             </div>
         </div>
     );
