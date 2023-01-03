@@ -1,10 +1,29 @@
 import React, {useState} from 'react';
 import "./UnitScreen.css"
-import alph_ex from "../slides/alph-ex.png" 
-import abj_ex from "../slides/abj-ex.png"
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import TabBar from '../components/TabBar';
 import { unitData } from '../data';
+
+// importing pngs
+function importAllAsArr(r) {
+    const sortedKeys = r.keys().sort();
+    const arr = sortedKeys.map((key) => r(key));
+    return arr;
+}
+const slidesData = {
+    unit1: importAllAsArr(require.context('../slides/unit1/', true, /\.(png)$/)),
+    unit2: importAllAsArr(require.context('../slides/unit2/', true, /\.(png)$/)),
+    unit3: importAllAsArr(require.context('../slides/unit3/', true, /\.(png)$/)),
+    unit4: importAllAsArr(require.context('../slides/unit4/', true, /\.(png)$/)),
+    unit5: importAllAsArr(require.context('../slides/unit5/', true, /\.(png)$/)),
+    unit6: importAllAsArr(require.context('../slides/unit6/', true, /\.(png)$/)),
+    unit7: importAllAsArr(require.context('../slides/unit7/', true, /\.(png)$/)),
+}
+Object.entries(unitData).forEach(([key, value], idx) => {
+    value.slides = slidesData[key];
+});
+// done
+
 
 const Carousel = ({imgs}) => {
     const size = imgs.length;
@@ -64,7 +83,7 @@ const UnitScreen = ({unit}) => {
                     <h1>{`Unit ${data.num}: ${data.name}`}</h1>
                     <h4>{data.body}</h4>
                 </div>
-                <Carousel imgs={[alph_ex, abj_ex]} />
+                <Carousel imgs={data.slides} />
             </div>
         </div>
     );
