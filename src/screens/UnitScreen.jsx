@@ -39,7 +39,9 @@ const Carousel = ({imgs, unit}) => {
 
     return (
         <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", paddingLeft:"5vw", paddingRight:"5vw"}}>
-            <div onClick={()=>handleArrowClick(-1)} className="arrow"><BsFillCaretLeftFill size={"3vw"}/></div>
+            <div onClick={()=>handleArrowClick(-1)} className="arrow">
+                <BsFillCaretLeftFill size={"3vw"} style={{color:unitStyles[unit].textColor}}/>
+            </div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
                 {/* {imgs.map((img, idx) => ( */}
@@ -60,7 +62,7 @@ const Carousel = ({imgs, unit}) => {
                                 margin:"0 2%",
                                 height: 5,
                                 width: "auto",
-                                backgroundColor:"black",
+                                backgroundColor:unitStyles[unit].textColor,
                                 borderRadius:5,
                                 opacity: idx===activeIndex ? 1 : 0.5,
                                 cursor:"pointer"
@@ -69,7 +71,9 @@ const Carousel = ({imgs, unit}) => {
                 </div>
                 </>
             </div>
-            <div onClick={()=>handleArrowClick(1)} className="arrow"><BsFillCaretRightFill size={"3vw"} /></div>
+            <div onClick={()=>handleArrowClick(1)} className="arrow">
+                <BsFillCaretRightFill size={"3vw"} style={{color:unitStyles[unit].textColor}}/>
+            </div>
         </div>
     );
 }
@@ -81,8 +85,8 @@ const UnitScreen = ({unit}) => {
             <TabBar unit={unit} />
             <div className="container">
                 <div className="text-container">
-                    <h1>{`Unit ${data.num}: ${data.name}`}</h1>
-                    <h4>{data.body}</h4>
+                    <h1 style={{color: unitStyles[unit].textColor}}>{`Unit ${data.num}: ${data.name}`}</h1>
+                    <h4 style={{color: unitStyles[unit].textColor}}>{data.body}</h4>
                 </div>
                 <Carousel imgs={data.slides} unit={unit} />
             </div>

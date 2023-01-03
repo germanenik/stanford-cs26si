@@ -10,7 +10,8 @@ const MenuItem = ({clickHandler, unit, unitKey, value}) => {
         <div 
             style={{
                 backgroundColor:hover ? unitStyles[unit].color4 : null,
-                cursor: "pointer"
+                cursor: "pointer",
+                color: unitStyles[unit].textColor
             }}
             className="expanded-entry"
             onClick={() => clickHandler(`/${unitKey}`)}
@@ -73,7 +74,8 @@ const Tab = ({name, unit, isExpandable=false}) => {
                 className="bar-button" 
                 style={{
                     backgroundColor: hover ? unitStyles[unit].color4 : null,
-                    cursor: hover ? "pointer" : "initial"
+                    cursor: hover ? "pointer" : "initial",
+                    color: unitStyles[unit].textColor
                 }}
             >{name}</div>
             {isExpandable && hover && <ExpandedMenu clickHandler={handleEntryClick} unit={unit}/>}
