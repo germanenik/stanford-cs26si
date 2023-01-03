@@ -33,6 +33,14 @@
     flex: 2
 }
 
+img {  
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+ }
+
 /* tablets, laptops */
 @media screen and (min-width: 1000px) {
     .container {
