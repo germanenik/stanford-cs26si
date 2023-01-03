@@ -6,12 +6,12 @@ import './SplashScreen.css'
 
 // TODOs: make all horozintal stuff relative, add min in terms of px
 
-// importing glyph svgs/pngs
-const cache = {};
-function importAll(r) {
-  r.keys().forEach((key) => (cache[getBaseFileName(key)] = r(key)));
-}
-importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
+// // importing glyph svgs/pngs
+// const cache = {};
+// function importAll(r) {
+//     r.keys().forEach((key) => (cache[getBaseFileName(key)] = r(key)));
+// }
+// importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
 // for looping
 const row_nums = Array.from([0, 1, 2, 3, 4, 5, 6]);
 const left_cols = Array.from(['n8', 'n7', 'n6', 'n5', 'n4', 'n3', 'n2', 'n1']);
@@ -42,15 +42,13 @@ const WindowEntry = ({str1, str2}) => (
     </div>
 );
 
-const Window = ({glyphId}) => {
-    // const paddingPx = 30;
+const Window = ({glyphId, cache}) => {
     const info = glyphId ? glyphInfo[glyphId] : null;
     return (
         <div className="window-div" 
             style={{
                 backgroundColor:"white", 
                 borderRadius:20,
-                // padding: paddingPx
             }}
         >
             {glyphId ? 
@@ -63,7 +61,7 @@ const Window = ({glyphId}) => {
                 <div style={{flex:0.1}} />
                 <div style={{flex:0.4, display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-end", height:"inherit"}}>
                     <div style={{display: "flex", flexDirection:"column", alignItems:"flex-end", paddingTop:6}}>
-                        <GlyphDiv id={glyphId} isWindowGlyph={true}/>
+                        <GlyphDiv id={glyphId} cache={cache} isWindowGlyph={true}/>
                         {info.codePoint.map((code) => (
                             <div key={`codepoint-${code}`} className="code-point" style={{paddingTop:5}}>{styleCodepoint(code)}</div>
                         ))}
@@ -86,12 +84,12 @@ const Window = ({glyphId}) => {
     );
 }
 
-const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => {
-    // console.log('drawing child', id, 'isSelected', isSelected, "isWindowGlyph", isWindowGlyph);
+const GlyphDiv = React.memo(({id, cache, isSelected=false, setWindowGlyphId=null, isWindowGlyph=false}) => { 
     const regularOp = 0.4, hoveredOp=0.7, selectedOp=1;
     const [opacity, setOpacity] = useState(!isWindowGlyph ? regularOp : 1);
     const className = !emojiIDs.includes(id) && isWindowGlyph ? "invert" : null;
-    const src = cache[id], imgStyles = glyphStyles[id]?.imgStyles;
+    const src = cache[id];
+    const imgStyles = glyphStyles[id].imgStyles;
 
     // filter img styles
     const factor = 0.6;
@@ -99,6 +97,7 @@ const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWin
         height: scaleVh(imgStyles.height, factor),
         // marginBottom: scaleVh(imgStyles.marginBottom, factor)
     };
+    if (isWindowGlyph) console.log("final img styles", finalImgStyles);
 
     const handleMouseOver = () => {
         if (!isWindowGlyph) { // no !isSelected for more elegant deselecting
@@ -143,6 +142,13 @@ const GlyphDiv = React.memo(({id, isSelected=false, setWindowGlyphId=null, isWin
 });
 
 const SplashScreen = () => {
+    // importing glyph svgs/pngs
+    const cache = {};
+    function importAll(r) {
+        r.keys().forEach((key) => (cache[getBaseFileName(key)] = r(key)));
+    }
+    importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
+
     const [windowGlyphId, setWindowGlyphId] = useState(null);
     return (
         <div>
@@ -154,17 +160,17 @@ const SplashScreen = () => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
+                                <GlyphDiv key={glyphId} id={glyphId} cache={cache} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
-                    <GlyphDiv id={getGlyphId(row,0)} isSelected={getGlyphId(row,0)===windowGlyphId} setWindowGlyphId={setWindowGlyphId} />
+                    <GlyphDiv id={getGlyphId(row,0)} cache={cache} isSelected={getGlyphId(row,0)===windowGlyphId} setWindowGlyphId={setWindowGlyphId} />
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"start", width:"40%"}}>
                         {right_cols.map((col) => {
                             const glyphId = getGlyphId(row, col);
                             if (cache[glyphId] === undefined) return null;
                             return (
-                                <GlyphDiv key={glyphId} id={glyphId} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
+                                <GlyphDiv key={glyphId} id={glyphId} cache={cache} isSelected={glyphId===windowGlyphId} setWindowGlyphId={setWindowGlyphId}/>
                             );
                         })}
                     </div>
@@ -172,7 +178,7 @@ const SplashScreen = () => {
             ))
             }
         </div>
-        <Window glyphId={windowGlyphId}/>
+        <Window glyphId={windowGlyphId} cache={cache}/>
         </div>
     );
 };

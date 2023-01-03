@@ -11,20 +11,19 @@ function importAllAsArr(r) {
     const arr = sortedKeys.map((key) => r(key));
     return arr;
 }
-const slidesData = {
-    unit1: importAllAsArr(require.context('../slides/unit1/', true, /\.(png)$/)),
-    unit2: importAllAsArr(require.context('../slides/unit2/', true, /\.(png)$/)),
-    unit3: importAllAsArr(require.context('../slides/unit3/', true, /\.(png)$/)),
-    unit4: importAllAsArr(require.context('../slides/unit4/', true, /\.(png)$/)),
-    unit5: importAllAsArr(require.context('../slides/unit5/', true, /\.(png)$/)),
-    unit6: importAllAsArr(require.context('../slides/unit6/', true, /\.(png)$/)),
-    unit7: importAllAsArr(require.context('../slides/unit7/', true, /\.(png)$/)),
-}
-Object.entries(unitData).forEach(([key, value], idx) => {
-    value.slides = slidesData[key];
-});
+// const slidesData = {
+//     unit1: importAllAsArr(require.context('../slides/unit1/', true, /\.(png)$/)),
+//     unit2: importAllAsArr(require.context('../slides/unit2/', true, /\.(png)$/)),
+//     unit3: importAllAsArr(require.context('../slides/unit3/', true, /\.(png)$/)),
+//     unit4: importAllAsArr(require.context('../slides/unit4/', true, /\.(png)$/)),
+//     unit5: importAllAsArr(require.context('../slides/unit5/', true, /\.(png)$/)),
+//     unit6: importAllAsArr(require.context('../slides/unit6/', true, /\.(png)$/)),
+//     unit7: importAllAsArr(require.context('../slides/unit7/', true, /\.(png)$/)),
+// }
+// Object.entries(unitData).forEach(([key, value], idx) => {
+//     value.slides = slidesData[key];
+// });
 // done
-
 
 const Carousel = ({imgs, unit}) => {
     const size = imgs.length;
@@ -79,6 +78,19 @@ const Carousel = ({imgs, unit}) => {
 }
 
 const UnitScreen = ({unit}) => {
+    // set up
+    const slidesData = {
+        unit1: importAllAsArr(require.context('../slides/unit1/', true, /\.(png)$/)),
+        unit2: importAllAsArr(require.context('../slides/unit2/', true, /\.(png)$/)),
+        unit3: importAllAsArr(require.context('../slides/unit3/', true, /\.(png)$/)),
+        unit4: importAllAsArr(require.context('../slides/unit4/', true, /\.(png)$/)),
+        unit5: importAllAsArr(require.context('../slides/unit5/', true, /\.(png)$/)),
+        unit6: importAllAsArr(require.context('../slides/unit6/', true, /\.(png)$/)),
+        unit7: importAllAsArr(require.context('../slides/unit7/', true, /\.(png)$/)),
+    }
+    Object.entries(unitData).forEach(([key, value], idx) => {
+        value.slides = slidesData[key];
+    });
     const data = unitData[unit];
     return (
         <div style={{display:"flex", flexDirection:"column", minHeight:"100vh", backgroundColor:unitStyles[unit].color2}}>
