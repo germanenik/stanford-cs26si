@@ -2,7 +2,7 @@ export const unitData = {
     unit1: {
         num: 1,
         name: "Alphabets",
-        body: "Alphabets are"
+        body: "Alphabets Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     unit2: {
         num: 2,

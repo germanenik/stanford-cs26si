@@ -19,7 +19,7 @@ const Carousel = ({imgs}) => {
 
     return (
         <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", paddingLeft:"5vw", paddingRight:"5vw"}}>
-            <div onClick={()=>handleArrowClick(-1)} className="arrow"><BsFillCaretLeftFill size={40}/></div>
+            <div onClick={()=>handleArrowClick(-1)} className="arrow"><BsFillCaretLeftFill size={"3vw"}/></div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
                 {/* {imgs.map((img, idx) => ( */}
@@ -49,7 +49,7 @@ const Carousel = ({imgs}) => {
                 </div>
                 </>
             </div>
-            <div onClick={()=>handleArrowClick(1)} className="arrow"><BsFillCaretRightFill size={40} /></div>
+            <div onClick={()=>handleArrowClick(1)} className="arrow"><BsFillCaretRightFill size={"3vw"} /></div>
         </div>
     );
 }
@@ -58,7 +58,7 @@ const UnitScreen = ({unit}) => {
     const data = unitData[unit];
     return (
         <div style={{display:"flex", flexDirection:"column", minHeight:"100vh", backgroundColor:"#A9B1E6"}}>
-            <TabBar />
+            <TabBar unit={unit} />
             <div className="container">
                 <div className="text-container">
                     <h1>{`Unit ${data.num}: ${data.name}`}</h1>

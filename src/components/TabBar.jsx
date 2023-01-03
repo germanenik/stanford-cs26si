@@ -67,9 +67,9 @@ const Tab = ({name, isExpandable=false}) => {
     )
 }
 
-const TabBar = () => {
+const TabBar = ({unit}) => {
     return (
-        <div className="tabbar-container" style={{display: 'flex', flexDirection: 'row', alignItems:"center", justifyContent: "space-between", height: "10vh", backgroundColor:"grey"}}
+        <div className={`tabbar-container tab-${unit}`} style={{display: 'flex', flexDirection: 'row', alignItems:"center", justifyContent: "space-between", height: "10vh"}}
         >
             <Tab name={"Logo"} />
             <div style={{display: 'flex', flexDirection: 'row', justifyContent:"flex-end"}}>
