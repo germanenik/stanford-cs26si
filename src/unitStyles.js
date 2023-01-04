@@ -22,17 +22,16 @@ const styles = {
     },
     unit4: {
         color1: "#ffb9d6",
-        color2: "#F2E3EA",
-        // color2: "#ffd7e8",
-        color3: "#fe94c1",
-        color4: "#fd63a4",
+        color2: '#FDEFF2',//"#F2E3EA",
+        color3: '#E4D2D8', //"#fe94c1",
+        color4: '#F6BFBC', //"#fd63a4",
         textColor: "black"
     },
     unit5: {
         color1: "#9bd2fd",
-        color2: "#d8edfe",
-        color3: "#8bcbfc",
-        color4: "#65b9fb",
+        color2: '#F0EFF7', //"#d8edfe",
+        color3: '#8ABFE8', //"#8bcbfc",
+        color4: '#869FDE', // "#65b9fb",
         textColor: "black"
     },
     unit6: {
