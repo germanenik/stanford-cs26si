@@ -92,7 +92,8 @@ const TabBar = ({unit}) => {
             alignItems:"center", 
             justifyContent: "space-between", 
             height: "10vh",
-            backgroundColor: unitStyles[unit].color3
+            backgroundColor: unitStyles[unit].color3,
+            zIndex: 3
         }}
         >
             <Tab name={"Logo"} unit={unit}/>

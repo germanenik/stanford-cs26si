@@ -56,6 +56,10 @@ img {
         padding-top: 20px;
     }
 
+    .background-glyph {
+        display: none;
+    }
+
     .carousel-container {
         padding-top: 20px;
         height:100%;
