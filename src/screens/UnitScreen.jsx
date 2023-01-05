@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./UnitScreen.css"
-import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import TabBar from '../components/TabBar';
 import { unitData } from '../data';
 import unitStyles from "../unitStyles";
@@ -38,9 +38,9 @@ const Carousel = ({imgs, unit}) => {
     }
 
     return (
-        <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", paddingLeft:"5vw", paddingRight:"5vw"}}>
+        <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
             <div onClick={()=>handleArrowClick(-1)} className="arrow">
-                <BsFillCaretLeftFill size={"3vw"} style={{color:unitStyles[unit].textColor}}/>
+                <BsChevronLeft size={"3vw"} style={{color:unitStyles[unit].textColor, strokeWidth:1}}/>
             </div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
@@ -60,7 +60,7 @@ const Carousel = ({imgs, unit}) => {
                             style={{
                                 flex:1,
                                 margin:"0 2%",
-                                height: 5,
+                                height: "5px",
                                 width: "auto",
                                 backgroundColor:unitStyles[unit].textColor,
                                 borderRadius:5,
@@ -72,7 +72,7 @@ const Carousel = ({imgs, unit}) => {
                 </>
             </div>
             <div onClick={()=>handleArrowClick(1)} className="arrow">
-                <BsFillCaretRightFill size={"3vw"} style={{color:unitStyles[unit].textColor}}/>
+                <BsChevronRight size={"3vw"} style={{color:unitStyles[unit].textColor, strokeWidth:1}}/>
             </div>
         </div>
     );

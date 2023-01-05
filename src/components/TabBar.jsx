@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./TabBar.css";
 import { unitData } from "../data";
 import unitStyles from "../unitStyles";
+import {BsChevronDown} from "react-icons/bs";
 
 const MenuItem = ({clickHandler, unit, unitKey, value}) => {
     const [hover, setHover] = useState(false);
@@ -84,6 +85,13 @@ const Tab = ({name, unit, isExpandable=false}) => {
     )
 }
 
+const UnitsLabel = () => (
+    <div style={{display:"flex", flexDirection:"row", alignItems:"center"}}>
+        <span>{'Units '}</span>
+        <BsChevronDown style={{marginLeft: "0.5vw"}}/>
+    </div>
+);
+
 const TabBar = ({unit}) => {
     return (
         <div className={"tabbar-container"} style={{
@@ -98,7 +106,7 @@ const TabBar = ({unit}) => {
         >
             <Tab name={"Logo"} unit={unit}/>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent:"flex-end"}}>
-                <Tab name={"Units v"} unit={unit} isExpandable={true} />
+                <Tab name={<UnitsLabel />} unit={unit} isExpandable={true} />
                 
                 <Tab name={"About"} unit={unit} />
             </div>
