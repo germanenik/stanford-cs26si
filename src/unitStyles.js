@@ -45,7 +45,7 @@ const styles = {
         color1: "#595959",
         color2: "#0d0d0d",
         color3: "#282828",
-        color4: "#575757",
+        color4: "#595959",
         textColor: "#f1f1f1"
     },
 }

@@ -129,7 +129,7 @@ const backgroundGlyphs = {
     ],
     unit4: [ // syllabaries
         {className: "background-glyph", src: glyph_2_n2, style: {position:"absolute", height:"80vh", bottom: "2vh", transform:"translateX(-50%)", opacity: 0.6, zIndex: 0}},
-        {className: "background-glyph", src: glyph_4_n5, style: {position:"absolute", height:"80vh", bottom: "2vh", right:0, transform:"translateX(50%)", opacity: 0.6, zIndex: 0}},
+        {className: "background-glyph", src: glyph_4_n5, style: {position:"absolute", height:"80vh", bottom: "2vh", right:0, transform:"translateX(55%)", opacity: 0.6, zIndex: 0}},
     ],
     unit5: [ // alphasyllabaries
         {className: "background-glyph", src: glyph_2_p4, style: {position:"absolute", height:"80vh", bottom: "2vh", transform:"translateX(-70%)", opacity: 0.35, zIndex: 0}},
