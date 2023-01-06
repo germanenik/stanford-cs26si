@@ -104,7 +104,9 @@ const UnitScreen = ({unit}) => {
             <div className="container" style={{zIndex: 1}}>
                 <div className="text-container">
                     <h1 style={{color: unitStyles[unit].textColor}}>{`Unit ${data.num}: ${data.name}`}</h1>
-                    <h4 style={{color: unitStyles[unit].textColor}}>{data.body}</h4>
+                    {data.body.map((string, idx) => (
+                        <div key={`body-${idx}`} className="text-body" style={{color: unitStyles[unit].textColor}}>{string}</div>
+                    ))}
                 </div>
                 <Carousel imgs={data.slides} unit={unit} />
             </div>
