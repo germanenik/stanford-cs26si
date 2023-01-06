@@ -3,7 +3,7 @@ export const unitData = {
         num: 1,
         name: "Alphabets",
         body: [
-            "Alphabets are a writing system where a consonant and a vowel is usually represented by a character, each of equal importance.",
+            "Alphabets are a writing system where a consonant and a vowel is usually represented by a character, each of equal importance/status.",
             "We learned about the applications of diacritics, why people change writing scripts, where most alphabets are encoded in Unicode, and how alphabets are typed." ,
             "Main case studies: Latin via Old English, Vietnamese, Polish; Cyrillic via Russian, Bulgarian; Greek, Georgian, Armenian, Adlam, N'ko.",
             "See the slides' preview!"
@@ -13,8 +13,8 @@ export const unitData = {
         num: 2,
         name: "Abjads",
         body: [
-            "Abjads are a writing system where main characters represent consonants, and vowels are either omitted or are optional diacritics. Most modern abjads are impure.",
-            "We learned about R2L directionality and how it affects the UI, roots and vowel patterns of semitic languages (and why abjads work for them specifically), Arabic IMFI glyph forms, Unicode vs. Complex Text Rendering Engines, and how abjads are typed.", 
+            "Abjads are writing system with main characters representing consonants, and vowels either omitted or optionally represented via diacritics. Most modern abjads are impure.",
+            "We learned about R2L directionality and how it affects the UI, roots and vowel patterns of Semitic languages (and why abjads work for them specifically), Arabic IMFI glyph forms, Unicode vs. Complex Text Rendering Engines, and how abjads are typed.", 
             "Main case studies: Old Tifinagh, Hebrew, Arabic (+ Arabizi).",
             "Check out the slides' preview!"
         ],
@@ -24,8 +24,8 @@ export const unitData = {
         num: 3,
         name: "Abugidas",
         body: [
-            "Most characters in an Abugida are consonant-vowel units, where consonants are primary and vowels are secondary (usually diacritics). The composition process is usually systematic.",
-            "We learned about historic conversions of abjads to abugidas, dependent vs. independent vowels, different diacritic placement in brahmic abugidas, consonant conjuncts, and how abugidas are typed.",
+            "Most characters in the abugida writing system are consonant-vowel units, where consonants are primary and vowels are secondary (usually diacritics). The composition process is usually systematic.",
+            "We learned about historic conversions of abjads to abugidas, dependent vs. independent vowels, different diacritic placement in Brahmic abugidas, consonant conjuncts, and how abugidas are typed.",
             "Main case studies: Ge'ez via Amharic; Devanagari via Hindi; Tamil, Thai, Canadian Aboriginal Syllabics.",
             "See the slides' preview!"
         ]
@@ -34,7 +34,7 @@ export const unitData = {
         num: 4,
         name: "Syllabaries",
         body: [
-            "Syllabary characters are consonant-vowel units but consonant and vowel parts are inseparable, unlike Abugidas.",
+            "In syllabaries, characters are consonant-vowel units, but consonant and vowel parts are inseparable, unlike Abugidas.",
             "We learned the history of Japanese writing, origins and purposes the three Japanse scripts, and how syllabaries are typed.", 
             "Main case studies: Hiragana and Katakana via Japanese; Cherokee, Afaka.",
             "Check out the slides' preview!"
@@ -44,8 +44,8 @@ export const unitData = {
         num: 5,
         name: "Alphasyllabaries",
         body: [
-            "Alphasyllabaries (which some call Syllabic Alphabets) make up syllabic units from phonetic alphabet-like characters.",
-            "We learned history of Korean writing, Jamo vs. Hangeul, composition rules of Hangeul characters, how Hangeul gets composed in computers, and how it is typed.", 
+            "Alphasyllabaries (which some call syllabic alphabets) are a writing system that makes up syllabic units from phonetic alphabet-like characters.",
+            "We learned the history of Korean writing, Jamo vs. Hangeul, composition rules of Hangeul characters, how Hangeul gets composed in computers, and how it is typed.", 
             "Case study: Hangeul via Korean.",
             "See the slides' preview!"
         ]
@@ -54,9 +54,9 @@ export const unitData = {
         num: 6,
         name: "Logosyllabaries",
         body: [
-            "Most characters of Logosyllabaries consist of a sound part and a meaning part.",
-            "We learned about the Xu Shen classification of Chinese characters, depths of the simplified vs. traditional debate, character simplification strategies, Han characters in Unicode (UniHan initiative), and many different ways to input Chinese (pinyin, bopomofo, handwriting, wubihua, cangjie, wubi).",
-            "Case study: Hanzi (simlified, traditional) via varieties of Chinese.",
+            "Most characters of the logosyllabary writing system consist of a sound part and a meaning part.",
+            "We learned about the Xu Shen classification of Chinese characters, the depths of the simplified vs. traditional debate, character simplification strategies, Han characters in Unicode (UniHan initiative), and many different ways to input Chinese (pinyin, bopomofo, handwriting, wubihua, cangjie, wubi).",
+            "Case study: Hanzi (simplified, traditional) via varieties of Chinese.",
             "Check out the slides' preview!"
         ]
     },
