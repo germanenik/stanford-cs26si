@@ -122,8 +122,8 @@ const backgroundGlyphs = {
         {className: "background-glyph", src: glyph_4_p1, style: {position:"absolute", height:"80vh", bottom: "2vh", right:0, transform:"translateX(50%)", opacity: 0.3, zIndex: 0}},
     ],
     unit2: [ // abjads
-        {className: "background-glyph", src: glyph_1_p4, style: {position:"absolute", height:"85vh", bottom: "2vh", transform:"translateX(-62%)", opacity: 0.5, zIndex: 0}},
-        {className: "background-glyph", src: glyph_3_n1, style: {position:"absolute", height:"85vh", bottom: "2vh", right:0, transform:"translateX(25%)", opacity: 0.5, zIndex: 0}},
+        {className: "background-glyph", src: glyph_1_p4, style: {position:"absolute", height:"85vh", bottom: "2vh", transform:"translateX(-62%)", opacity: 0.4, zIndex: 0}},
+        {className: "background-glyph", src: glyph_3_n1, style: {position:"absolute", height:"85vh", bottom: "2vh", right:0, transform:"translateX(25%)", opacity: 0.4, zIndex: 0}},
     ],
     unit3: [ // abugidas
         {className: "background-glyph", src: glyph_1_n7, style: {position:"absolute", height:"80vh", bottom: "2vh", transform:"translateX(-55%)", opacity: 0.4, zIndex: 0}},
