@@ -3,7 +3,7 @@ export const unitData = {
         num: 1,
         name: "Alphabets",
         body: [
-            "Alphabets are a writing system where a consonant and a vowel is usually represented by a character, each of equal importance/status.",
+            "Alphabets are a writing system where a consonant and a vowel are each usually represented by a character; both are of equal importance/status.",
             "We learned about the applications of diacritics, why people change writing scripts, where most alphabets are encoded in Unicode, and how alphabets are typed." ,
             "Main case studies: Latin via Old English, Vietnamese, Polish; Cyrillic via Russian, Bulgarian; Greek, Georgian, Armenian, Adlam, N'ko.",
             "See the slides' preview!"
@@ -24,7 +24,7 @@ export const unitData = {
         num: 3,
         name: "Abugidas",
         body: [
-            "Most characters in the abugida writing system are consonant-vowel units, where consonants are primary and vowels are secondary (usually diacritics). The composition process is usually systematic.",
+            "Most characters in the abugida writing system are consonant-vowel units, where consonants are primary and vowels are secondary (often diacritics). The composition process is usually systematic.",
             "We learned about historic conversions of abjads to abugidas, dependent vs. independent vowels, different diacritic placement in Brahmic abugidas, consonant conjuncts, and how abugidas are typed.",
             "Main case studies: Ge'ez via Amharic; Devanagari via Hindi; Tamil, Thai, Canadian Aboriginal Syllabics.",
             "See the slides' preview!"
@@ -34,7 +34,7 @@ export const unitData = {
         num: 4,
         name: "Syllabaries",
         body: [
-            "In syllabaries, characters are consonant-vowel units, but consonant and vowel parts are inseparable, unlike Abugidas.",
+            "In syllabaries, characters are consonant-vowel units, but consonant and vowel parts are inseparable, unlike abugidas.",
             "We learned the history of Japanese writing, origins and purposes the three Japanse scripts, and how syllabaries are typed.", 
             "Main case studies: Hiragana and Katakana via Japanese; Cherokee, Afaka.",
             "Check out the slides' preview!"
@@ -55,7 +55,7 @@ export const unitData = {
         name: "Logosyllabaries",
         body: [
             "Most characters of the logosyllabary writing system consist of a sound part and a meaning part.",
-            "We learned about the Xu Shen classification of Chinese characters, the depths of the simplified vs. traditional debate, character simplification strategies, Han characters in Unicode (UniHan initiative), and many different ways to input Chinese (pinyin, bopomofo, handwriting, wubihua, cangjie, wubi).",
+            "We learned about the Xu Shen classification of Chinese characters, depths of the simplified vs. traditional debate, character simplification strategies, Han characters in Unicode (the UniHan initiative), and many different ways to input Chinese (pinyin, bopomofo, handwriting, wubihua, cangjie, wubi).",
             "Case study: Hanzi (simplified, traditional) via varieties of Chinese.",
             "Check out the slides' preview!"
         ]
@@ -65,8 +65,8 @@ export const unitData = {
         name: "Unicode",
         body: [
             "Unicode is not a writing system but an encoding standard.",
-            "Although Unicode has been integrated into all units about writing systems, we also had a separate unit on technicalities of Unicode. We learned about numeral systems, pre-Unicode encoding standards (ASCII), pros and cons of UTF-8, UTF-16, UTF-32 encoding schemes, and some history of text input.",
-            "See the slides preview!"
+            "Although Unicode has been integrated into all units about writing systems, we also had a separate unit on technicalities of Unicode. We learned about numeral systems, pre-Unicode encoding standards (e.g. ASCII), pros and cons of UTF-8, UTF-16, UTF-32 encoding schemes, and some history of text input.",
+            "See the slides' preview!"
         ]
     }
 }
