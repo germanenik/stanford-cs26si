@@ -1,16 +1,16 @@
 const styles = {
     unit1: {
-        color2: "#c6ccf2",
         color1: "#a9b1e6",
+        color2: "#c6ccf2",
         color3: "#6a79d3",
-        color4: "#394bc5",
+        color4: "#a9b1e6",
         textColor: "black"
     },
     unit2: {
         color1: "#798c5f",
         color2: "#D4D7CE", 
         color3: "#74875b",
-        color4: "#314e00",
+        color4: "#D4D7CE",
         textColor: "black"
     },
     unit3: {
