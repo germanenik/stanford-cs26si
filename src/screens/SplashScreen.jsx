@@ -71,7 +71,7 @@ const Window = ({glyphId, cache}) => {
             </div> :
             <div style={{display:'flex', flexDirection:'column', height:"inherit", width:"inherit"}}> 
                 <div style={{flex:0.5}}> 
-                    <div className="title-1">CS26SI</div>
+                    <div className="title-1">{"CS 26SI"}</div>
                     {/* <div className="title-2">at Stanford</div> */}
                     <div className="title-3">by German Enik</div>
                 </div>
