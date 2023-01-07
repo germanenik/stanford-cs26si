@@ -52,7 +52,7 @@ const Window = ({glyphId, cache}) => {
             }}
         >
             {glyphId ? 
-            <div style={{display: "flex", flexDirection:"row", height:"inherit", width:"inherit"}}>
+            <div key={`window-content-${glyphId}`} style={{display: "flex", flexDirection:"row", height:"inherit", width:"inherit"}}>
                 <div style={{flex:0.5, display: "flex", flexDirection:"column", justifyContent: "space-between", alignItems:"flex-start", height:"inherit", width:"inherit"}}>
                     <WindowEntry str1={info.writingSystem} str2={"Writing System"} />
                     <WindowEntry str1={info.script} str2={"Script"} />
