@@ -65,11 +65,19 @@ const Tab = ({name, unit, isExpandable=false}) => {
         setHover(false);
     }
 
+    const handleTabClick = (routeName) => {
+        let linkName = routeName.toLowerCase();
+        if (!isExpandable) {
+            navigate(`/${linkName}`);
+        }
+    }
+
     return (
         <div 
             style={{position:"relative"}}
             onMouseOver={()=>handleMouseOver()}
             onMouseLeave={()=>handleMouseLeave()}
+            onClick={()=>handleTabClick(name)}
         >
             <div 
                 className="bar-button" 

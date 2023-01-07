@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SplashScreen from './screens/SplashScreen';
 import UnitScreen from './screens/UnitScreen';
+import AboutScreen from './screens/AboutScreen';
 
 import { unitData } from './data';
 import glyph_2_p1 from './glyphs/glyph_2_p1.svg';
@@ -52,6 +53,7 @@ function App() {
         <Route path="/unit5" element={<UnitScreen unit={"unit5"} data={unitData["unit5"]}/>} />
         <Route path="/unit6" element={<UnitScreen unit={"unit6"} data={unitData["unit6"]}/>} />
         <Route path="/unit7" element={<UnitScreen unit={"unit7"} data={unitData["unit7"]}/>} />
+        <Route path="/about" element={<AboutScreen />} />
       </Routes>
     </Router>
     </div>

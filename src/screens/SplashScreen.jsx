@@ -6,13 +6,6 @@ import './SplashScreen.css'
 
 // TODOs: make all horozintal stuff relative, add min in terms of px
 
-// // importing glyph svgs/pngs
-// const cache = {};
-// function importAll(r) {
-//     r.keys().forEach((key) => (cache[getBaseFileName(key)] = r(key)));
-// }
-// importAll(require.context('../glyphs/', true, /\.(png|svg)$/));
-// for looping
 const row_nums = Array.from([0, 1, 2, 3, 4, 5, 6]);
 const left_cols = Array.from(['n8', 'n7', 'n6', 'n5', 'n4', 'n3', 'n2', 'n1']);
 const right_cols = Array.from(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8']);
