@@ -39,10 +39,6 @@ img {
     -ms-user-select: none;
 }
 
-.text-body {
-    font-size: 17px;
-}
-
 /* tablets, laptops */
 @media screen and (min-width: 1000px) {
     .container {
@@ -57,6 +53,7 @@ img {
     }
 
     .text-body {
+        font-size: 17px;
         padding-bottom: 10px;
     }
 }
@@ -80,6 +77,7 @@ img {
     }
 
     .text-body {
+        font-size: 15px;
         padding-bottom: 5px;
     }
 }
