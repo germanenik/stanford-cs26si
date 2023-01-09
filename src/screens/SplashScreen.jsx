@@ -90,7 +90,6 @@ const GlyphDiv = React.memo(({id, cache, isSelected=false, setWindowGlyphId=null
         height: scaleVh(imgStyles.height, factor),
         // marginBottom: scaleVh(imgStyles.marginBottom, factor)
     };
-    if (isWindowGlyph) console.log("final img styles", finalImgStyles);
 
     const handleMouseOver = () => {
         if (!isWindowGlyph) { // no !isSelected for more elegant deselecting
