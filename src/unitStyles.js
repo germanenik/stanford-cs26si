@@ -49,9 +49,9 @@ const styles = {
         textColor: "#f1f1f1"
     },
     about: {
-        color1: "#595959",
-        color2: "#6684C6",
-        color3: "#282828",
+        color1: "white",
+        color2: "#a4b5dd", //"#6684C6",
+        color3: "#6684C6",
         color4: "#595959",
         textColor: "#0d0d0d" 
     }

@@ -56,6 +56,7 @@ img {
     display: flex;
     flex-direction: column;
     background-color: white;
+    /* background-color: #a4b5dd; */
     padding: 30px;
     border-radius: 20px;
 }

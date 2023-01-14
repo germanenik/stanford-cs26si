@@ -34,7 +34,7 @@ const AboutScreen = () => {
                             <div className='about-separator'/>
                             <HolderCard label={"German"}>
                                 <p>Hi! I'm German Enik. At the moment of writing this, I'm  a 23-year-old Master's student at Stanford pursuing CS.</p>
-                                <p>I'm originally from Moscow, and growing up writing Cyrillic and speaking Russian fueled my interests in everything at the intersection of tech and language, which I also explored during my undergrad at Stanford studying CS and Linguistics.</p>  
+                                <p>I'm originally from Moscow. Growing up writing Cyrillic and speaking Russian fueled my interests in everything at the intersection of tech and language, which I also explored during my undergrad at Stanford studying CS and Linguistics.</p>  
                                 <p>Feel free to reach out!</p>                           
                             </HolderCard>
                         </div>
