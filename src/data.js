@@ -5,9 +5,10 @@ export const unitData = {
         body: [
             "Alphabets are a writing system where a consonant and a vowel are each usually represented by a character; both are of equal importance/status.",
             "We learned about the applications of diacritics, why people change writing scripts, where most alphabets are encoded in Unicode, and how alphabets are typed." ,
-            "Main case studies: Latin via Old English, Vietnamese, Polish; Cyrillic via Russian, Bulgarian; Greek, Georgian, Armenian, Adlam, N'ko.",
-            "See the slides' preview!"
+            "Main case studies: Latin via Old English, Vietnamese, Polish; Cyrillic via Russian, Bulgarian; Greek, Georgian, Armenian, Adlam, N'ko."
         ],
+        slidesNums: [6, 24, 27, 65, 77, 82, 102, 129, 130],
+        slidesTotal: 130
     },
     unit2: {
         num: 2,
@@ -15,9 +16,10 @@ export const unitData = {
         body: [
             "Abjads are writing system with main characters representing consonants, and vowels either omitted or optionally represented via diacritics. Most modern abjads are impure.",
             "We learned about R2L directionality and how it affects the UI, roots and vowel patterns of Semitic languages (and why abjads work for them specifically), Arabic IMFI glyph forms, Unicode vs. Complex Text Rendering Engines, and how abjads are typed.", 
-            "Main case studies: Old Tifinagh, Hebrew, Arabic (+ Arabizi).",
-            "Check out the slides' preview!"
+            "Main case studies: Old Tifinagh, Hebrew, Arabic (+ Arabizi)."
         ],
+        slidesNums: [9, 17, 29, 32, 39, 43, 57, 63],
+        slidesTotal: 64
         
     },
     unit3: {
@@ -26,9 +28,10 @@ export const unitData = {
         body: [
             "Most characters in the abugida writing system are consonant-vowel units, where consonants are primary and vowels are secondary (often diacritics). The composition process is usually systematic.",
             "We learned about historic conversions of abjads to abugidas, dependent vs. independent vowels, different diacritic placement in Brahmic abugidas, consonant conjuncts, and how abugidas are typed.",
-            "Main case studies: Ge'ez via Amharic; Devanagari via Hindi; Tamil, Thai, Canadian Aboriginal Syllabics.",
-            "See the slides' preview!"
-        ]
+            "Main case studies: Ge'ez via Amharic; Devanagari via Hindi; Tamil, Thai, Canadian Aboriginal Syllabics."
+        ],
+        slidesNums: [5, 9, 20, 26, 28, 32, 37, 46, 66],
+        slidesTotal: 68
     },
     unit4: {
         num: 4,
@@ -36,9 +39,10 @@ export const unitData = {
         body: [
             "In syllabaries, characters are consonant-vowel units, but consonant and vowel parts are inseparable, unlike abugidas.",
             "We learned the history of Japanese writing, origins and purposes the three Japanse scripts, and how syllabaries are typed.", 
-            "Main case studies: Hiragana and Katakana via Japanese; Cherokee, Afaka.",
-            "Check out the slides' preview!"
-        ]
+            "Main case studies: Hiragana and Katakana via Japanese; Cherokee, Afaka."
+        ],
+        slidesNums: [7, 13, 17, 31, 32, 35, 46],
+        slidesTotal: 50
     },
     unit5: {
         num: 5,
@@ -46,9 +50,10 @@ export const unitData = {
         body: [
             "Alphasyllabaries (which some call syllabic alphabets) are a writing system that makes up syllabic units from phonetic alphabet-like characters.",
             "We learned the history of Korean writing, Jamo vs. Hangeul, composition rules of Hangeul characters, how Hangeul gets composed in computers, and how it is typed.", 
-            "Case study: Hangeul via Korean.",
-            "See the slides' preview!"
-        ]
+            "Case study: Hangeul via Korean."
+        ],
+        slidesNums: [6, 8, 14, 18, 21, 30, 36, 37],
+        slidesTotal: 40
     },
     unit6: {
         num: 6,
@@ -56,18 +61,20 @@ export const unitData = {
         body: [
             "Most characters of the logosyllabary writing system consist of a sound part and a meaning part.",
             "We learned about the Xu Shen classification of Chinese characters, depths of the simplified vs. traditional debate, character simplification strategies, Han characters in Unicode (the UniHan initiative), and many different ways to input Chinese (pinyin, bopomofo, handwriting, wubihua, cangjie, wubi).",
-            "Case study: Hanzi (simplified, traditional) via varieties of Chinese.",
-            "Check out the slides' preview!"
-        ]
+            "Case study: Hanzi (simplified, traditional) via varieties of Chinese."
+        ],
+        slidesNums: [5, 23, 30, 37, 38, 49, 51, 63],
+        slidesTotal: 66
     },
     unit7: {
         num: 7,
         name: "Unicode",
         body: [
             "Unicode is not a writing system but an encoding standard.",
-            "Although Unicode has been integrated into all units about writing systems, we also had a separate unit on technicalities of Unicode. We learned about numeral systems, pre-Unicode encoding standards (e.g. ASCII), pros and cons of UTF-8, UTF-16, UTF-32 encoding schemes, and some history of text input.",
-            "See the slides' preview!"
-        ]
+            "Although Unicode has been integrated into all units about writing systems, we also had a separate unit on technicalities of Unicode. We learned about numeral systems, pre-Unicode encoding standards (e.g. ASCII), pros and cons of UTF-8, UTF-16, UTF-32 encoding schemes, and some history of text input."        
+        ],
+        slidesNums: [4, 10, 16, 20, 22, 24],
+        slidesTotal: 58
     }
 }
 

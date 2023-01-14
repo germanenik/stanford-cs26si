@@ -4,7 +4,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import TabBar from '../components/TabBar';
 import unitStyles from "../unitStyles";
 
-const Carousel = ({imgs, unit}) => {
+const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
     const size = imgs.length;
     const [activeIndex, setActiveIndex] = useState(0);
     console.log("active index", activeIndex);
@@ -23,6 +23,10 @@ const Carousel = ({imgs, unit}) => {
             </div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
+                <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"flex-end", width:"90%", paddingBottom:5, color:unitStyles[unit].textColor}}>
+                    <div className="slides-preview-label">Slides Preview</div>
+                    <div className="slides-preview-count">{slidesNums[activeIndex]} / {slidesTotal}</div>
+                </div>
                 {/* {imgs.map((img, idx) => ( */}
                 <img 
                     // key={`slide-${idx}`} 
@@ -73,7 +77,7 @@ const UnitScreen = ({unit, data}) => {
                         <div key={`body-${idx}`} className="text-body" style={{color: unitStyles[unit].textColor}}>{string}</div>
                     ))}
                 </div>
-                <Carousel key={`carousel-${unit}`} imgs={data.slides} unit={unit} />
+                <Carousel key={`carousel-${unit}`} imgs={data.slides} slidesNums={data.slidesNums} slidesTotal={data.slidesTotal} unit={unit} />
             </div>
         </div>
     );

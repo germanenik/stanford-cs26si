@@ -39,11 +39,21 @@ img {
     -ms-user-select: none;
 }
 
+.slides-preview-label {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.slides-preview-count {
+    font-style: italic;
+    font-weight: bold;
+}
+
 /* tablets, laptops */
 @media screen and (min-width: 1000px) {
     .container {
         flex-direction: row;
-        padding-top: 70px;
+        padding-top: 50px;
         padding-right: 5vw;
         padding-left: 5vw;
     }
@@ -55,6 +65,14 @@ img {
     .text-body {
         font-size: 17px;
         padding-bottom: 10px;
+    }
+
+    .slides-preview-label {
+        font-size: 20px;
+    }
+
+    .slides-preview-count {
+        font-size: 17px;
     }
 }
 
@@ -79,5 +97,13 @@ img {
     .text-body {
         font-size: 15px;
         padding-bottom: 5px;
+    }
+
+    .slides-preview-label {
+        font-size: 18px;
+    }
+
+    .slides-preview-count {
+        font-size: 15px;
     }
 }
