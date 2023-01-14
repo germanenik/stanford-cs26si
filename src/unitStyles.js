@@ -48,6 +48,13 @@ const styles = {
         color4: "#595959",
         textColor: "#f1f1f1"
     },
+    about: {
+        color1: "#595959",
+        color2: "#6684C6",
+        color3: "#282828",
+        color4: "#595959",
+        textColor: "#0d0d0d" 
+    }
 }
 
 /*        color1: '#EF9AC0', // "#ffb9d6",

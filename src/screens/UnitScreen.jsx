@@ -24,8 +24,8 @@ const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"flex-end", width:"90%", paddingBottom:5, color:unitStyles[unit].textColor}}>
-                    <div className="slides-preview-label">Slides Preview</div>
-                    <div className="slides-preview-count">{slidesNums[activeIndex]} / {slidesTotal}</div>
+                    <div className="subtitle" style={{fontStyle:"italic"}}>Slides Preview</div>
+                    <div className="subsubtitle" style={{fontStyle:"italic"}}>{slidesNums[activeIndex]} / {slidesTotal}</div>
                 </div>
                 {/* {imgs.map((img, idx) => ( */}
                 <img 
@@ -62,7 +62,6 @@ const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
 }
 
 const UnitScreen = ({unit, data}) => {
-    console.log(data);
     return (
         <div style={{display:"flex", flexDirection:"column", minHeight:"100vh", backgroundColor:unitStyles[unit].color2}}>
             <TabBar unit={unit} />

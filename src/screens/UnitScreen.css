@@ -1,3 +1,8 @@
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
 .inactive {
     display: none;
 }
@@ -39,14 +44,20 @@ img {
     -ms-user-select: none;
 }
 
-.slides-preview-label {
-    font-style: italic;
+.subtitle {
     font-weight: bold;
 }
 
-.slides-preview-count {
-    font-style: italic;
+.subsubtitle {
     font-weight: bold;
+}
+
+.holder-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
 }
 
 /* tablets, laptops */
@@ -67,12 +78,16 @@ img {
         padding-bottom: 10px;
     }
 
-    .slides-preview-label {
+    .subtitle {
         font-size: 20px;
     }
 
-    .slides-preview-count {
+    .subsubtitle {
         font-size: 17px;
+    }
+
+    .about-separator {
+        min-width: 5vw;
     }
 }
 
@@ -99,11 +114,11 @@ img {
         padding-bottom: 5px;
     }
 
-    .slides-preview-label {
+    .subtitle {
         font-size: 18px;
     }
 
-    .slides-preview-count {
+    .subsubtitle {
         font-size: 15px;
     }
 }
