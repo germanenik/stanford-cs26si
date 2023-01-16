@@ -90,6 +90,10 @@ img {
     .about-separator {
         min-width: 5vw;
     }
+
+    .about-section {
+        flex-direction: row;
+    }
 }
 
 /* phones */
@@ -121,5 +125,9 @@ img {
 
     .subsubtitle {
         font-size: 15px;
+    }
+
+    .about-section {
+        flex-direction: column;
     }
 }

@@ -52,7 +52,7 @@ const styles = {
         color1: "white",
         color2: "#a4b5dd", //"#6684C6",
         color3: "#6684C6",
-        color4: "#595959",
+        color4: "#4B62B7",
         textColor: "#0d0d0d" 
     }
 }
