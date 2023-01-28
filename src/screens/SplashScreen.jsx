@@ -42,6 +42,7 @@ const Window = ({glyphId, cache}) => {
             style={{
                 backgroundColor:"white", 
                 borderRadius:20,
+                cursor: "default"
             }}
         >
             {glyphId ? 
@@ -56,7 +57,7 @@ const Window = ({glyphId, cache}) => {
                     <div style={{display: "flex", flexDirection:"column", alignItems:"flex-end", paddingTop:6}}>
                         <GlyphDiv id={glyphId} cache={cache} isWindowGlyph={true}/>
                         {info.codePoint.map((code) => (
-                            <div key={`codepoint-${code}`} className="code-point" style={{paddingTop:5}}>{styleCodepoint(code)}</div>
+                            <div key={`codepoint-${code}`} className="code-point" style={{paddingTop:5, cursor:"text"}}>{styleCodepoint(code)}</div>
                         ))}
                     </div>
                     <Button />
@@ -144,7 +145,7 @@ const SplashScreen = () => {
     const [windowGlyphId, setWindowGlyphId] = useState(null);
     return (
         <div>
-        <div style={{backgroundColor:"#6684C6", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh"}}>
+        <div style={{backgroundColor:"#6684C6", display:"flex", flexDirection:"column", justifyContent:"center", overflow:"clip", height:"100vh", cursor:"pointer"}}>
             {row_nums.map((row) => (
                 <div key={`row_${row}`} style={{display:"flex", flexDirection:"row", justifyContent:"center", width:"100%", marginBottom:vh(marginsY[row])}}> 
                     <div style={{display:"flex", flexDirection:"row", justifyContent:"end", width:"40%"}}>
