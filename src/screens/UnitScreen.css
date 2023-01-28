@@ -61,6 +61,11 @@ img {
     border-radius: 20px;
 }
 
+.reach-out-link {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 /* tablets, laptops */
 @media screen and (min-width: 1000px) {
     .container {
