@@ -99,6 +99,26 @@ img {
     .about-section {
         flex-direction: row;
     }
+
+    .holder-card-container {
+        width: 70%;
+    }
+
+    .about-img {
+        display: flex;
+        width: 30%;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .about-img1 {
+        padding-left: 50px;
+    }
+
+    .about-img2 {
+        padding-right: 50px;
+    }
 }
 
 /* phones */
@@ -134,5 +154,13 @@ img {
 
     .about-section {
         flex-direction: column;
+    }
+
+    .holder-card-container {
+        width: 100%;
+    }
+
+    .about-img {
+        display: none;
     }
 }
