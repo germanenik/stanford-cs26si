@@ -78,9 +78,7 @@
     }
 
     .window-div {
-        /* width: 40vw;  */
-        /* aspect-ratio: 3/2; */
-        width: 35vh;
+        width: 32vh;
         height: 20vh;
         position:absolute; 
         bottom:13vh; 
