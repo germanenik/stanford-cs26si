@@ -87,7 +87,7 @@ const backgroundGlyphs = {
       {className: "background-glyph", src: glyph_2_n1, style: {position:"absolute", height:"80vh", bottom: "2vh", right:0, transform:"translateX(60%)", opacity: 0.6, zIndex: 0}},
   ],
   unit7: [ // unicode
-      {className: "background-glyph", src: glyph_of_0, style: {position:"absolute", height:"80vh", bottom: "2vh", transform:"translateX(-60%)", opacity: 0.05, zIndex: 0}},
-      {className: "background-glyph", src: glyph_of_1, style: {position:"absolute", height:"80vh", bottom: "2vh", right:0, transform:"translateX(20%)", opacity: 0.05, zIndex: 0}},
+      {className: "background-glyph", src: glyph_of_0, style: {position:"absolute", height:"80vh", bottom: "2vh", transform:"translateX(-60%)", opacity: 0.1, zIndex: 0}},
+      {className: "background-glyph", src: glyph_of_1, style: {position:"absolute", height:"80vh", bottom: "2vh", right:0, transform:"translateX(20%)", opacity: 0.1, zIndex: 0}},
   ],
 }

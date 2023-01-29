@@ -45,7 +45,8 @@ const ExpandedMenu = ({clickHandler, unit}) => {
     )
 }
 
-const Tab = ({name, unit, isExpandable=false}) => {
+const Tab = ({name, unit, isExpandable=false, isLogo=false}) => {
+    // TODO: restructure this component
     const [hover, setHover] = useState(false);
     const navigate = useNavigate();
 
@@ -66,24 +67,24 @@ const Tab = ({name, unit, isExpandable=false}) => {
     }
 
     const handleTabClick = (routeName) => {
-        let linkName = routeName.toLowerCase();
         if (!isExpandable) {
-            navigate(`/${linkName}`);
+            // i know this is ugly, i just need to get this website out
+            navigate(!isLogo ? `/${routeName.toLowerCase()}` : "/");
         }
     }
 
     return (
         <div 
             style={{position:"relative"}}
-            onMouseOver={()=>handleMouseOver()}
-            onMouseLeave={()=>handleMouseLeave()}
+            onMouseOver={!isLogo ? ()=>handleMouseOver() : null}
+            onMouseLeave={!isLogo ? ()=>handleMouseLeave() : null}
             onClick={()=>handleTabClick(name)}
         >
             <div 
-                className="bar-button" 
+                className={isLogo ? "logo-button" : "bar-button"} 
                 style={{
                     backgroundColor: hover ? unitStyles[unit].color4 : null,
-                    cursor: hover ? "pointer" : "initial",
+                    cursor: hover ? "pointer" : "default",
                     color: unitStyles[unit].textColor
                 }}
             >{name}</div>
@@ -112,7 +113,7 @@ const TabBar = ({unit}) => {
             zIndex: 3
         }}
         >
-            <Tab name={"Logo"} unit={unit}/>
+            <Tab name={"CS 26SI @ Stanford"} unit={unit} isLogo={true}/>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent:"flex-end"}}>
                 <Tab name={<UnitsLabel />} unit={unit} isExpandable={true} />
                 
