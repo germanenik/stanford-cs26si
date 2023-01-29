@@ -50,8 +50,8 @@
 /* phones */
 @media screen and (max-width: 800px) {
     .tabbar-container {
-        padding-left: 50px; 
-        padding-right: 50px;
+        padding-left: 25px; 
+        padding-right: 25px;
     }
 
     .bar-button {
