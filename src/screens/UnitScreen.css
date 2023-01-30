@@ -12,8 +12,10 @@ p {
 }
 
 .arrow {
-    cursor: pointer;
-    /* width:30; */
+    /* cursor: pointer; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .fade-in-image { animation: fadeIn 1s; }

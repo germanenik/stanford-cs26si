@@ -17,9 +17,9 @@ const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
     }
 
     return (
-        <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center"}}>
+        <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"stretch"}}>
             <div onClick={()=>handleArrowClick(-1)} className="arrow">
-                <BsChevronLeft size={"3vw"} style={{color:unitStyles[unit].textColor, strokeWidth:1}}/>
+                <BsChevronLeft size={"3vw"} style={{color:unitStyles[unit].textColor, strokeWidth:1, cursor:"pointer"}}/>
             </div>
             <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                 <>
@@ -55,7 +55,7 @@ const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
                 </>
             </div>
             <div onClick={()=>handleArrowClick(1)} className="arrow">
-                <BsChevronRight size={"3vw"} style={{color:unitStyles[unit].textColor, strokeWidth:1}}/>
+                <BsChevronRight size={"3vw"} style={{color:unitStyles[unit].textColor, strokeWidth:1, cursor:"pointer"}}/>
             </div>
         </div>
     );
