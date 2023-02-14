@@ -80,7 +80,7 @@
     .window-div {
         width: 32vh;
         height: 20vh;
-        position:absolute; 
+        position:fixed; 
         bottom:3vh; 
         right:3vw; 
         padding: 20px;
