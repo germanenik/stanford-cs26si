@@ -84,7 +84,7 @@ const Tab = ({name, unit, isExpandable=false, isLogo=false}) => {
                 className={isLogo ? "logo-button" : "bar-button"} 
                 style={{
                     backgroundColor: hover ? unitStyles[unit].color4 : null,
-                    cursor: hover ? "pointer" : "default",
+                    cursor: "pointer",
                     color: unitStyles[unit].textColor
                 }}
             >{name}</div>
