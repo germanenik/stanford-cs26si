@@ -1,7 +1,6 @@
 {
   "name": "stanford-cs26si",
   "version": "0.1.0",
-  "homepage": "https://germanenik.github.io/stanford-cs26si",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
