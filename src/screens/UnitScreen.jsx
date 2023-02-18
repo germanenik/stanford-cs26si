@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./UnitScreen.css"
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import TabBar from '../components/TabBar';
@@ -16,6 +16,14 @@ const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
         setActiveIndex(newIndex);
     }
 
+    // preloading all images for this unit
+    useEffect(() => {
+        imgs.forEach(imageUrl => {
+            const img = new Image();
+            img.src = imageUrl;
+        });
+    }, [imgs]);
+
     return (
         <div className="carousel-container" style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"stretch"}}>
             <div onClick={()=>handleArrowClick(-1)} className="arrow">
@@ -27,14 +35,11 @@ const Carousel = ({imgs, slidesNums, slidesTotal, unit}) => {
                     <div className="subtitle" style={{fontStyle:"italic"}}>Slides Preview</div>
                     <div className="subsubtitle" style={{fontStyle:"italic"}}>{slidesNums[activeIndex]} / {slidesTotal}</div>
                 </div>
-                {/* {imgs.map((img, idx) => ( */}
                 <img 
-                    // key={`slide-${idx}`} 
-                    // className={idx===activeIndex ? "active" : "inactive"}
+                    id="slide"
                     src={imgs[activeIndex]} 
                     alt=""
                     style={{maxWidth:"90%", height:"auto", borderRadius:20, borderColor:unitStyles[unit].color1, borderWidth:"5px", borderStyle:"solid"}}/>
-                {/* ))} */}
                 <div style={{display:"flex", flexDirection:"row", justifyContent:"center", alignItems:"center", width:"50%", paddingTop:20}}>
                     {imgs.map((_, idx) => (
                         <div 
