@@ -24,6 +24,7 @@ const AboutScreen = () => {
                 <div className="about-section" style={{display: "flex", justifyContent:"space-between", alignItems:"top", paddingBottom:"50px"}}>
                     <div className="holder-card-container" style={{display:"flex", flexDirection:"row", alignItems:"center"}}>
                         <HolderCard label={"The Class"}>
+                            <p>Where do Computer Science and Language intersect beyond NLP?</p>
                             <p>This 1-credit class addresses intersections of writing systems and tech. Stanford has stellar NLP, yet I noticed a coursework gap. To fill it, I proposed this class to the faculty senate, created the curriculum, and taught it in the fall of 2022. (And built this website over winter break!)</p>
                             <p>Ten wonderful students enrolled, ranging from undeclared freshmen to Computer Science upperclassmen to master's students from East Asian studies. The small class size fostered great questions, conversations, and in-class team work.</p>
                         </HolderCard>

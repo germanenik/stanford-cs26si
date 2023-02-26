@@ -24,7 +24,7 @@
 /* tablets, laptops */
 @media screen and (min-width: 800px) {
     .title-1 {
-        font-size: 7vh;
+        font-size: 6vh;
     }
 
     .title-2 {
@@ -66,7 +66,7 @@
 /* phones */
 @media screen and (max-width: 800px) {
     .title-1 {
-        font-size: 5vh;
+        font-size: 4vh;
     }
 
     .title-2 {
@@ -74,7 +74,7 @@
     }
 
     .title-3 {
-        font-size: 3vh;
+        font-size: 2.5vh;
     }
 
     .window-div {
