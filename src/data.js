@@ -4,7 +4,7 @@ export const unitData = {
         name: "Alphabets",
         body: [
             "Alphabets are a writing system where a consonant and a vowel are each usually represented by a character; both are of equal importance/status.",
-            "We learned about the applications of diacritics, why people change writing scripts, where most alphabets are encoded in Unicode, and how alphabets are typed." ,
+            "We learned about applications of diacritics, why people change writing scripts, where most alphabets are encoded in Unicode, and how alphabets are typed." ,
             "Main case studies: Latin via Old English, Vietnamese, Polish; Cyrillic via Russian, Bulgarian; Greek, Georgian, Armenian, Adlam, N'ko."
         ],
         slidesNums: [6, 24, 27, 65, 77, 82, 102, 129, 130],
@@ -15,7 +15,7 @@ export const unitData = {
         name: "Abjads",
         body: [
             "Abjads are writing system with main characters representing consonants, and vowels either omitted or optionally represented via diacritics. Most modern abjads are impure.",
-            "We learned about R2L directionality and how it affects the UI, roots and vowel patterns of Semitic languages (and why abjads work for them specifically), Arabic IMFI glyph forms, Unicode vs. Complex Text Rendering Engines, and how abjads are typed.", 
+            "We learned about R2L directionality and how it affects the UI, root and vowel patterns of Semitic languages (and why abjads work for them specifically), Arabic IMFI glyph forms, Unicode vs. Complex Text Rendering Engines, and how abjads are typed.", 
             "Main case studies: Old Tifinagh, Hebrew, Arabic (+ Arabizi)."
         ],
         slidesNums: [9, 17, 29, 32, 39, 43, 57, 63],
@@ -71,7 +71,7 @@ export const unitData = {
         name: "Unicode",
         body: [
             "Unicode is not a writing system but an encoding standard.",
-            "Although Unicode has been integrated into all units about writing systems, we also had a separate unit on technicalities of Unicode. We learned about numeral systems, pre-Unicode encoding standards (e.g. ASCII), pros and cons of UTF-8, UTF-16, UTF-32 encoding schemes, and some history of text input."        
+            "Although Unicode has been integrated into all units about writing systems, we still had a separate unit on technicalities of Unicode. We learned about numeral systems, pre-Unicode encoding standards (e.g. ASCII), pros and cons of UTF-8, UTF-16, UTF-32 encoding schemes, and some history of text input."        
         ],
         slidesNums: [4, 10, 16, 20, 22, 24],
         slidesTotal: 58
